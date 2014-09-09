@@ -144,7 +144,13 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\TracksController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DomainObjects\Response.cs" />
+    <Compile Include="DomainObjects\TestData.cs" />
+    <Compile Include="DomainObjects\Track.cs" />
+    <Compile Include="DomainObjects\TrackList.cs" />
+    <Compile Include="DomainObjects\TracksResponse.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

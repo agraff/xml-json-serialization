@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="DefaultXmlSerializer.cs" />
     <Compile Include="ExampleModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

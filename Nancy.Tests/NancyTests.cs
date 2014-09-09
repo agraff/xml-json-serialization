@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System.Xml.Linq;
+using System.Xml.XPath;
+using NUnit.Framework;
 using Newtonsoft.Json;
 using XmlJsonSerialization;
 
@@ -15,7 +17,7 @@ namespace NancyExample.Tests
 		{
 			CreateRequestAndGetJsonResponse();
 
-			Assert.That(_response, Is.Not.EqualTo(null));
+			Assert.That(_response.Tracks.PageSize.Value, Is.EqualTo(3));
 		}
 
 		[Test]
@@ -29,7 +31,7 @@ namespace NancyExample.Tests
 		public void Nancy_xml_response_is_in_older_format()
 		{
 			CreateRequestAndGetXmlResponse();
-			Assert.That(_response.TracksResponse.Tracks.PageSize, Is.EqualTo(3));
+			Assert.That(_response.response.tracks.PageSize(), Is.EqualTo(3));
 		}
 
 		private void CreateRequestAndGetXmlResponse()
@@ -63,5 +65,5 @@ namespace NancyExample.Tests
 				 _response = JsonConvert.DeserializeObject<dynamic>(response.Body);
 			}
 		}
-    }
+	}
 }

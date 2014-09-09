@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace Domain
 {
+	[XmlRoot("response")]
 	public class TracksResponse : Response
 	{
+		[XmlElement("tracks")]
 		public TrackList Tracks { get; set; }
 	}
 

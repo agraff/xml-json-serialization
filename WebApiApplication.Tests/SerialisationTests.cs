@@ -12,7 +12,7 @@ namespace WebApiApplication.Tests
 		{
 			var client = CreateWebApiClient();
 
-			var content = client.GetXml("values");
+			var content = client.GetXml("tracks");
 
 			Console.WriteLine(content);
 			Assert.That(content, Is.StringStarting("<"));
@@ -23,10 +23,13 @@ namespace WebApiApplication.Tests
 		{
 			var client = CreateWebApiClient();
 
-			var content = client.GetJson("values");
-
+			var content = client.GetJson("tracks");
 			Console.WriteLine(content);
+
 			Assert.That(content, Is.StringStarting("{").Or.StringStarting("["));
+
+			var expectedContent = EmbeddedResource.GetContent("Expected.json", GetType());
+			Assert.That(content, Is.EqualTo(expectedContent));
 		}
 
 		private static ApiClient CreateWebApiClient()

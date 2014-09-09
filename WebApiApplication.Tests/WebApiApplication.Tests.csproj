@@ -41,6 +41,7 @@
     <Compile Include="SerialisationTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Expected.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

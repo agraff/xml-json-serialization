@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AA3A0989-D7EF-4705-A710-A2673218269C}</ProjectGuid>
+    <ProjectGuid>{58BDFBB0-ADFE-4DBF-9287-F5417983A1FA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApiApplication.Tests</RootNamespace>
-    <AssemblyName>WebApiApplication.Tests</AssemblyName>
+    <RootNamespace>Test.Common</RootNamespace>
+    <AssemblyName>Test.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,27 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExampleTests.cs" />
+    <Compile Include="ApiClient.cs" />
+    <Compile Include="Parameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Web\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Test.Common\Test.Common.csproj">
-      <Project>{58BDFBB0-ADFE-4DBF-9287-F5417983A1FA}</Project>
-      <Name>Test.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

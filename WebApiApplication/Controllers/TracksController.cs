@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using Domain;
+﻿using System.Web.Http;
+using WebApiApplication.DomainObjects;
 
 namespace WebApiApplication.Controllers
 {
@@ -13,7 +8,7 @@ namespace WebApiApplication.Controllers
 		// GET api/tracks
 		public TracksResponse Get()
 		{
-			return new Domain.TestData().GetTracksResponse();
+			return TestData.GetTracksResponse();
 		}
 	}
 }

@@ -146,6 +146,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\TracksController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DomainObjects\Response.cs" />
+    <Compile Include="DomainObjects\TestData.cs" />
+    <Compile Include="DomainObjects\Track.cs" />
+    <Compile Include="DomainObjects\TrackList.cs" />
+    <Compile Include="DomainObjects\TracksResponse.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,12 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{160f1066-8dd4-46e6-b699-ed96dfc0a239}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

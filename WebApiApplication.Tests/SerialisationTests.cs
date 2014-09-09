@@ -7,15 +7,24 @@ namespace WebApiApplication.Tests
 	[TestFixture]
 	public class SerialisationTests
 	{
+		private string _content;
+
+		[TearDown]
+		public void PrintResponse()
+		{
+			Console.WriteLine("--- Begin Response ---");
+			Console.WriteLine(_content ?? "NULL");
+			Console.WriteLine("---- End Response ----");
+		}
+
 		[Test]
 		public void GetXml()
 		{
 			var client = CreateWebApiClient();
 
-			var content = client.GetXml("tracks");
+			_content = client.GetXml("tracks");
 
-			Console.WriteLine(content);
-			Assert.That(content, Is.StringStarting("<"));
+			Assert.That(_content, Is.StringStarting("<"), "Response doesn't look like XML.");
 		}
 
 		[Test]
@@ -23,13 +32,12 @@ namespace WebApiApplication.Tests
 		{
 			var client = CreateWebApiClient();
 
-			var content = client.GetJson("tracks");
-			Console.WriteLine(content);
+			_content = client.GetJson("tracks");
 
-			Assert.That(content, Is.StringStarting("{").Or.StringStarting("["));
+			Assert.That(_content, Is.StringStarting("{").Or.StringStarting("["), "Response doesn't look like JSON.");
 
 			var expectedContent = EmbeddedResource.GetContent("Expected.json", GetType());
-			Assert.That(content, Is.EqualTo(expectedContent));
+			Assert.That(_content, Is.EqualTo(expectedContent));
 		}
 
 		private static ApiClient CreateWebApiClient()

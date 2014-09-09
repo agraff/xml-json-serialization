@@ -2,7 +2,7 @@
 using Nancy.Json;
 using Newtonsoft.Json;
 
-namespace Domain
+namespace NancyExample.DomainObjects
 {
 	public class Response
 	{

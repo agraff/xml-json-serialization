@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domain
+namespace NancyExample.DomainObjects
 {
 	public class Track
 	{

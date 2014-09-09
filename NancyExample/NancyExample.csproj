@@ -50,6 +50,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Nancy.Hosting.Aspnet.0.21.1\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web" />
@@ -67,6 +71,11 @@
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="DefaultXmlSerializer.cs" />
+    <Compile Include="DomainObjects\Response.cs" />
+    <Compile Include="DomainObjects\TestData.cs" />
+    <Compile Include="DomainObjects\Track.cs" />
+    <Compile Include="DomainObjects\TracksRequest.cs" />
+    <Compile Include="DomainObjects\TracksResponse.cs" />
     <Compile Include="ExampleModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,12 +87,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{160f1066-8dd4-46e6-b699-ed96dfc0a239}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,6 +1,6 @@
-﻿using Domain;
-using Nancy;
+﻿using Nancy;
 using Nancy.ModelBinding;
+using NancyExample.DomainObjects;
 
 namespace NancyExample
 {

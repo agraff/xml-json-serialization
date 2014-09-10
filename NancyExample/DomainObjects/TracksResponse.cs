@@ -12,9 +12,16 @@ namespace NancyExample.DomainObjects
 
 	public class TrackList
 	{
-		public int PageSize { get; set; }
-		public int TotalItems { get; set; }
+		[XmlElement("page")]
 		public int PageNumber { get; set; }
+
+		[XmlElement("pageSize")]
+		public int PageSize { get; set; }
+
+		[XmlElement("totalItems")]
+		public int TotalItems { get; set; }
+
+		[XmlElement("track")]
 		public List<Track> Track { get; set; }
 	}
 }

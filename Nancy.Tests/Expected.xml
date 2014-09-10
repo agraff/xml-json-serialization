@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<response xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" status="ok" version="1.2" xsi:noNamespaceSchemaLocation="http://api.7digital.com/1.2/static/7digitalAPI.xsd">
+	<tracks>
+		<page>2</page>
+		<pageSize>3</pageSize>
+		<totalItems>1423</totalItems>
+		<track>
+			<title>First Track</title>
+			<number>1</number>
+			<releaseDateTime>1998-03-21T09:30:00Z</releaseDateTime>
+		</track>
+		<track>
+			<title>Another Track</title>
+			<number>5</number>
+			<releaseDateTime>2009-12-07T11:45:23Z</releaseDateTime>
+		</track>
+		<track>
+			<title>Final Track</title>
+			<number>13</number>
+			<releaseDateTime>2014-07-30T17:12:56Z</releaseDateTime>
+		</track>
+	</tracks>
+</response>

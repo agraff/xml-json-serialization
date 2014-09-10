@@ -2,11 +2,11 @@
 
 namespace WebApiApplication.DomainObjects
 {
-	public class TrackList
+	public class TracksPage
 	{
 		public int PageSize { get; set; }
 		public int TotalItems { get; set; }
 		public int PageNumber { get; set; }
-		public List<Track> Track { get; set; }
+		public IEnumerable<Track> Tracks { get; set; }
 	}
 }

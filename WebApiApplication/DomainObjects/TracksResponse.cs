@@ -1,7 +1,11 @@
-﻿namespace WebApiApplication.DomainObjects
+﻿using System.Runtime.Serialization;
+
+namespace WebApiApplication.DomainObjects
 {
+	[DataContract(Name = "response")]
 	public class TracksResponse : Response
 	{
-		public TrackList Tracks { get; set; }
+		[DataMember(Name = "tracks")]
+		public TracksPage TracksPage { get; set; }
 	}
 }

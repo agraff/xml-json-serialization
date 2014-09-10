@@ -20,17 +20,20 @@ namespace WebApiApplication.Tests
 		[Test]
 		public void GetXml()
 		{
-			var client = CreateWebApiClient();
+			var client = FixtureSetup.CreateWebApiClient();
 
 			_content = client.GetXml("tracks");
 
 			Assert.That(_content, Is.StringStarting("<"), "Response doesn't look like XML.");
+
+			var expectedContent = EmbeddedResource.GetContent("Expected.xml", GetType());
+			Assert.That(_content, Is.EqualTo(expectedContent));
 		}
 
 		[Test]
 		public void GetJson()
 		{
-			var client = CreateWebApiClient();
+			var client = FixtureSetup.CreateWebApiClient();
 
 			_content = client.GetJson("tracks");
 
@@ -38,11 +41,6 @@ namespace WebApiApplication.Tests
 
 			var expectedContent = EmbeddedResource.GetContent("Expected.json", GetType());
 			Assert.That(_content, Is.EqualTo(expectedContent));
-		}
-
-		private static ApiClient CreateWebApiClient()
-		{
-			return new ApiClient("http://localhost:57007/api");
 		}
 	}
 }

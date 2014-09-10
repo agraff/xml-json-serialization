@@ -37,11 +37,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FixtureSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerialisationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Expected.json" />
+    <EmbeddedResource Include="Expected.xml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Text.RegularExpressions;
+using NUnit.Framework;
 using Newtonsoft.Json;
 using Test.Common;
 
@@ -34,6 +35,17 @@ namespace WebApiApplication.Tests
 			var expectedContent = EmbeddedResource.GetContent("Expected.json", GetType());
 
 			Assert.That(Content, Is.EqualTo(expectedContent));
+		}
+
+		[Test]
+		public void ContentMatchesExpectedJsonIgnoringWhitespace()
+		{
+			var expectedContent = EmbeddedResource.GetContent("Expected.json", GetType());
+
+			var contentWithoutWhitespace = Regex.Replace(Content, @"\s", "");
+			var expectedContentWithoutWhitespace = Regex.Replace(expectedContent, @"\s", "");
+
+			Assert.That(contentWithoutWhitespace, Is.EqualTo(expectedContentWithoutWhitespace));
 		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using NUnit.Framework;
 using Test.Common;
 
@@ -33,6 +34,17 @@ namespace WebApiApplication.Tests
 			var expectedContent = EmbeddedResource.GetContent("Expected.xml", GetType());
 
 			Assert.That(Content, Is.EqualTo(expectedContent));
+		}
+
+		[Test]
+		public void ContentMatchesExpectedXmlIgnoringWhitespace()
+		{
+			var expectedContent = EmbeddedResource.GetContent("Expected.xml", GetType());
+
+			var contentWithoutWhitespace = Regex.Replace(Content, @"\s", "");
+			var expectedContentWithoutWhitespace = Regex.Replace(expectedContent, @"\s", "");
+
+			Assert.That(contentWithoutWhitespace, Is.EqualTo(expectedContentWithoutWhitespace));
 		}
 	}
 }

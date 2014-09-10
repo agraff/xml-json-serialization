@@ -15,13 +15,29 @@ namespace WebApiApplication
 				defaults: new { id = RouteParameter.Optional }
 			);
 
-			UseCamelCaseForJsonSerialisation(config);
+			SetupXmlSerialiser();
+			SetupJsonSerialiser();
+			SetupContentNegotiator();
 		}
 
-		private static void UseCamelCaseForJsonSerialisation(HttpConfiguration config)
+		private static void SetupContentNegotiator()
 		{
-			var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
-			jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+			// This will cause a 406 to be returned (rather than using any serialiser), when no serialiser found that matches the response's Accept type.
+			GlobalConfiguration.Configuration.Services.Replace(typeof (IContentNegotiator), new DefaultContentNegotiator(true));
+		}
+
+		private static void SetupXmlSerialiser()
+		{
+			var xml = GlobalConfiguration.Configuration.Formatters.XmlFormatter;
+
+			xml.UseXmlSerializer = true;
+		}
+
+		private static void SetupJsonSerialiser()
+		{
+			var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+
+			json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 		}
 	}
 }

@@ -24,7 +24,7 @@ namespace WebApiApplication.DomainObjects
 			};
 		}
 
-		private static IEnumerable<Track> GetTracks()
+		private static Track[] GetTracks()
 		{
 			return new[]
 			{

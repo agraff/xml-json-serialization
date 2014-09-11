@@ -2,8 +2,7 @@
 
 namespace WebApiApplication.DomainObjects
 {
-	[XmlRoot("response")]
-	[XmlInclude(typeof(TracksResponse))]
+	//[XmlRoot("response")]
 	public class Response
 	{
 		[XmlAttribute("status")]

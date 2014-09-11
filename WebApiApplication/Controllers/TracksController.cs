@@ -8,14 +8,14 @@ namespace WebApiApplication.Controllers
 	public class TracksController : ApiController
 	{
 		// GET api/tracks
-		public Response Get()
-		{
-			return TestData.GetTracksResponse();
-		}
-
-		//public TracksPage Get()
+		//public Response Get()
 		//{
-		//	return TestData.GetTracksPage();
+		//	return TestData.GetTracksResponse();
 		//}
+
+		public TracksPage Get()
+		{
+			return TestData.GetTracksPage();
+		}
 	}
 }

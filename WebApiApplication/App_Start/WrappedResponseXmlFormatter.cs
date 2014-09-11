@@ -35,7 +35,7 @@ namespace WebApiApplication
 			rootResponseElement.Add(valueXDoc.Root);
 			
 			var responseXDoc = new XDocument(rootResponseElement);
-			responseXDoc.Save(writeStream);
+			WriteXDocToStream(writeStream, responseXDoc);
 		}
 
 		private static XDocument SerializeToXDoc(Type type, object value)
@@ -65,6 +65,19 @@ namespace WebApiApplication
 				new XAttribute(XNamespace.Get(xsi) + "noNamespaceSchemaLocation", noNamespaceSchemaLocation),
 				new XAttribute("status", "ok"),
 				new XAttribute("version", "1.2"));
+		}
+
+		private static void WriteXDocToStream(Stream stream, XDocument xDoc)
+		{
+			var xmlWriterSettings = new XmlWriterSettings 
+			{
+				Indent = false, 
+				Encoding = new UTF8Encoding(false, true)
+			};
+			using (var sw = XmlWriter.Create(stream, xmlWriterSettings))
+			{
+				xDoc.Save(sw);
+			}
 		}
 	}
 }

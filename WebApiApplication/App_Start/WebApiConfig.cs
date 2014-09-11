@@ -31,7 +31,7 @@ namespace WebApiApplication
 			var standardXmlFormatter = GlobalConfiguration.Configuration.Formatters.XmlFormatter;
 			GlobalConfiguration.Configuration.Formatters.Remove(standardXmlFormatter);
 			
-			var customXmlFormatter = new CustomXmlFormatter();
+			var customXmlFormatter = new WrappedResponseXmlFormatter();
 			GlobalConfiguration.Configuration.Formatters.Add(customXmlFormatter);
 		}
 

@@ -35,7 +35,7 @@ namespace WebApiApplication
 			rootResponseElement.Add(valueXDoc.Root);
 			
 			var responseXDoc = new XDocument(rootResponseElement);
-			WriteXDocToStream(writeStream, responseXDoc);
+			WriteXDocToStream(responseXDoc, writeStream);
 		}
 
 		private static XDocument SerializeToXDoc(Type type, object value)
@@ -67,16 +67,16 @@ namespace WebApiApplication
 				new XAttribute("version", "1.2"));
 		}
 
-		private static void WriteXDocToStream(Stream stream, XDocument xDoc)
+		private static void WriteXDocToStream(XDocument xDoc, Stream stream)
 		{
 			var xmlWriterSettings = new XmlWriterSettings 
 			{
 				Indent = false, 
 				Encoding = new UTF8Encoding(false, true)
 			};
-			using (var sw = XmlWriter.Create(stream, xmlWriterSettings))
+			using (var writer = XmlWriter.Create(stream, xmlWriterSettings))
 			{
-				xDoc.Save(sw);
+				xDoc.Save(writer);
 			}
 		}
 	}

@@ -5,14 +5,14 @@ namespace WebApiApplication.DomainObjects
 {
 	public class TracksPage
 	{
+		[XmlElement("page")]
+		public int Page { get; set; }
+
 		[XmlElement("pageSize")]
 		public int PageSize { get; set; }
 
 		[XmlElement("totalItems")]
 		public int TotalItems { get; set; }
-
-		[XmlElement("pageNumber")]
-		public int PageNumber { get; set; }
 
 		[XmlElement("track")]
 		public Track[] Tracks { get; set; }

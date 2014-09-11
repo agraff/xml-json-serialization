@@ -17,7 +17,7 @@ namespace WebApiApplication.DomainObjects
 		{
 			return new TracksPage
 			{
-				PageNumber = 2,
+				Page = 2,
 				PageSize = 3,
 				TotalItems = 1423,
 				Tracks = GetTracks()

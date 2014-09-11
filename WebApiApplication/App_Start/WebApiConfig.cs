@@ -28,9 +28,11 @@ namespace WebApiApplication
 
 		private static void SetupXmlSerialiser()
 		{
-			var xml = GlobalConfiguration.Configuration.Formatters.XmlFormatter;
-
-			xml.UseXmlSerializer = true;
+			var standardXmlFormatter = GlobalConfiguration.Configuration.Formatters.XmlFormatter;
+			GlobalConfiguration.Configuration.Formatters.Remove(standardXmlFormatter);
+			
+			var customXmlFormatter = new CustomXmlFormatter();
+			GlobalConfiguration.Configuration.Formatters.Add(customXmlFormatter);
 		}
 
 		private static void SetupJsonSerialiser()

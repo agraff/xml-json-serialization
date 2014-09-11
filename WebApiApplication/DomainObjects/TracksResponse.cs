@@ -2,6 +2,7 @@
 
 namespace WebApiApplication.DomainObjects
 {
+	[XmlRoot("response")]
 	public class TracksResponse : Response
 	{
 		[XmlElement("tracks")]

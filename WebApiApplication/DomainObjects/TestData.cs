@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace WebApiApplication.DomainObjects
 {
 	public static class TestData
 	{
-		public static TracksResponse GetTracksResponse()
+		public static TracksResponse GetTracksPage()
 		{
 			return new TracksResponse
-			{
-				TracksPage = GetTracksPage()
-			};
-		}
-
-		public static TracksPage GetTracksPage()
-		{
-			return new TracksPage
 			{
 				Page = 2,
 				PageSize = 3,

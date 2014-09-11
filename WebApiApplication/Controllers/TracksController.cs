@@ -13,7 +13,7 @@ namespace WebApiApplication.Controllers
 		//	return TestData.GetTracksResponse();
 		//}
 
-		public TracksPage Get()
+		public TracksResponse Get()
 		{
 			return TestData.GetTracksPage();
 		}

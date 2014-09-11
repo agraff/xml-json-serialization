@@ -150,7 +150,6 @@
     <Compile Include="DomainObjects\Response.cs" />
     <Compile Include="DomainObjects\TestData.cs" />
     <Compile Include="DomainObjects\Track.cs" />
-    <Compile Include="DomainObjects\TracksPage.cs" />
     <Compile Include="DomainObjects\TracksResponse.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

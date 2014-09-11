@@ -29,7 +29,7 @@ namespace WebApiApplication
 
 		public override void WriteToStream(Type type, object value, System.IO.Stream writeStream, System.Net.Http.HttpContent content)
 		{
-			if (true)
+			if (false)
 				WriteToStreamSimple(type, value, writeStream);
 			else
 				WriteToStreamFullCustom(type, value, writeStream);
@@ -38,21 +38,33 @@ namespace WebApiApplication
 		private static void WriteToStreamFullCustom(Type type, object value, Stream writeStream)
 		{
 			var serializer = new XmlSerializer(type);
-			var ms = new MemoryStream();
-			serializer.Serialize(XmlWriter.Create(ms), value);
-			ms.Position = 0;
-			var xDoc = XDocument.Load(ms);
+			XDocument xDoc;
+
+			using (var ms = new MemoryStream())
+			{
+				using (var writer = XmlWriter.Create(ms))
+				{
+					serializer.Serialize(writer, value);
+				}
+
+				ms.Position = 0;
+				xDoc = XDocument.Load(ms);
+			}
 
 			// wrap the TrackResponse in a xml doctype + <response>
 			var trackResponseNode = xDoc.FirstNode;
 
 			var responseElement = new XElement("response");
 			responseElement.Add(trackResponseNode);
+			
+			// xDoc.Root.AddBeforeSelf(responseElement);
+
+			var x2 = new XDocument(responseElement);
+			
 
 
 			// write the memorystream or XDocument to the writeStream
-			var xmlWriter = XmlWriter.Create(writeStream);
-			xDoc.WriteTo(xmlWriter);
+			x2.Save(writeStream);
 
 			// profit!
 		}

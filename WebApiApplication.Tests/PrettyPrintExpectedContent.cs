@@ -17,7 +17,8 @@ namespace WebApiApplication.Tests
 			const string resourceName = "Expected.xml";
 
 			var xml = EmbeddedResource.GetContent(resourceName, GetType());
-			var formattedXml = XDocument.Parse(xml).ToString();
+			var xDocument = XDocument.Parse(xml);
+			var formattedXml = xDocument.Declaration + Environment.NewLine + xDocument;
 
 			Print(formattedXml, resourceName);
 		}

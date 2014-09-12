@@ -1,26 +1,29 @@
-﻿using Nancy;
-using Nancy.Responses;
+﻿using System.Runtime.Serialization;
+using Nancy;
 using Nancy.Responses.Negotiation;
+using NancyExample.DomainObjects;
+using Response = Nancy.Response;
 
 namespace NancyExample
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
+	using Nancy.Responses;
 	/// <summary>
 	/// Processes the model for json media types and extension.
 	/// </summary>
-	public class JsonProcessor : IResponseProcessor
+	public class ExampleJsonProcessor : IResponseProcessor
 	{
 		private readonly ISerializer serializer;
 		private static readonly IEnumerable<Tuple<string, MediaRange>> extensionMappings =
-		new[] { new Tuple<string, MediaRange>("json", new MediaRange("application/json")) };
+		new[] { new Tuple<string, MediaRange>("json", MediaRange.FromString("application/json")) };
 		/// <summary>
-		/// Initializes a new instance of the <see cref="JsonProcessor"/> class,
-		/// with the provided <paramref name="serializers"/>.
+		/// Initializes a new instance of the <see cref="ExampleJsonProcessor"/> class,
+		/// with the provided <see cref="serializers"/>.
 		/// </summary>
 		/// <param name="serializers">The serializes that the processor will use to process the request.</param>
-		public JsonProcessor(IEnumerable<ISerializer> serializers)
+		public ExampleJsonProcessor(IEnumerable<ISerializer> serializers)
 		{
 			this.serializer = serializers.FirstOrDefault(x => x.CanSerialize("application/json"));
 		}
@@ -72,7 +75,27 @@ namespace NancyExample
 		/// <returns>A response</returns>
 		public Response Process(MediaRange requestedMediaRange, dynamic model, NancyContext context)
 		{
-			return new JsonResponse(model, this.serializer);
+			
+			Type modelType = model.GetType();
+
+			object modelToSerialize = (object) model;
+
+			var properties = modelType.GetProperties().ToList();
+
+			foreach (var property in properties)
+			{
+				var type = property.GetType();
+
+				var attributes = property.GetCustomAttributes(true);
+
+				if (attributes.OfType<DataMemberAttribute>().Any())
+				{
+					var m = (dynamic)property.GetGetMethod().Invoke(modelToSerialize, new object[0]);
+					return new JsonResponse<dynamic>(m, this.serializer);
+				}
+			}
+			
+			return new JsonResponse(model, serializer);
 		}
 		private static bool IsExactJsonContentType(MediaRange requestedContentType)
 		{

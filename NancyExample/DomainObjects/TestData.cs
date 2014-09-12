@@ -29,13 +29,13 @@ namespace NancyExample.DomainObjects
 				};
 
 			return new TracksResponse
-				{
+			{
 					Tracks = new TrackList
 						{
 							PageNumber = 2,
 							PageSize = 3,
 							TotalItems = 1423,
-							Track = new List<Track> {track1, track2, track3}
+							Track = new List<Track> { track1, track2, track3 }
 						}
 				};
 		}

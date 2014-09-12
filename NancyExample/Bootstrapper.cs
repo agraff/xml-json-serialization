@@ -1,6 +1,10 @@
 ﻿using Nancy.Bootstrapper;
 using Nancy.Responses;
 using Nancy.Responses.Negotiation;
+using Nancy.Serialization.JsonNet;
+using Newtonsoft.Json;
+using JsonProcessor = Nancy.Responses.Negotiation.JsonProcessor;
+
 
 namespace NancyExample
 {
@@ -22,11 +26,11 @@ namespace NancyExample
 			{
 				c.Serializers.Clear();
 				c.Serializers.Add(typeof(DefaultXmlSerializer));
-				c.Serializers.Add(typeof(DefaultJsonSerializer));
+				c.Serializers.Add(typeof(JsonNetSerializer));
 
 				c.ResponseProcessors.Clear();
 				c.ResponseProcessors.Add(typeof(XmlProcessor));
-				c.ResponseProcessors.Add(typeof(JsonProcessor));
+				c.ResponseProcessors.Add(typeof(ExampleJsonProcessor));
 			});
 		}
 	}

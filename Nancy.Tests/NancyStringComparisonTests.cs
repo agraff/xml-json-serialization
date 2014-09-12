@@ -48,9 +48,9 @@ namespace NancyExample.Tests
 
 				Assert.That(response.StatusCode, Is.EqualTo(200));
 
-				var xmlToReturn = response.Body;
-				xmlToReturn = xmlToReturn.Replace("\r\n", string.Empty).Replace("\t", string.Empty).Replace(" ", string.Empty);
-				return xmlToReturn;
+				var stringToReturn = response.Body;
+				stringToReturn = stringToReturn.Replace("\r\n", string.Empty).Replace("\t", string.Empty).Replace(" ", string.Empty);
+				return stringToReturn;
 			}
 		}
 	}

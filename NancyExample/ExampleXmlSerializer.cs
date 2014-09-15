@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
+using System.Xml;
 using System.Xml.Serialization;
 using Nancy;
 
@@ -13,7 +15,7 @@ namespace NancyExample
 	/// Nancy doesn't have a way to set the Encoding of the xml :(
 	/// I made a pull request - https://github.com/NancyFx/Nancy/pull/1301
 	/// </summary>
-	public class DefaultXmlSerializer : ISerializer
+	public class ExampleXmlSerializer : ISerializer
 	{
 		/// <summary>
 		/// Whether the serializer can serialize the content type
@@ -44,8 +46,19 @@ namespace NancyExample
 		public void Serialize<TModel>(string contentType, TModel model, Stream outputStream)
 		{
 			var serializer = new XmlSerializer(typeof(TModel));
-			var streamWriter = new StreamWriter(outputStream, System.Text.Encoding.UTF8);
-			serializer.Serialize(streamWriter, model);
+
+			var xmlWriterSettings = new XmlWriterSettings 
+			{
+				Indent = false, 
+				Encoding = new UTF8Encoding(false, true)
+			};
+			using (var writer = XmlWriter.Create(outputStream, xmlWriterSettings))
+			{
+				serializer.Serialize(writer, model);
+			}
+
+			// var streamWriter = new StreamWriter(outputStream, System.Text.Encoding.UTF8);
+			// serializer.Serialize(streamWriter, model);
 		}
 
 		private static bool IsXmlType(string contentType)
@@ -58,9 +71,7 @@ namespace NancyExample
 			var contentMimeType = contentType.Split(';')[0];
 
 			return contentMimeType.Equals("application/xml", StringComparison.InvariantCultureIgnoreCase) ||
-				   contentMimeType.Equals("text/xml", StringComparison.InvariantCultureIgnoreCase) ||
-				  (contentMimeType.StartsWith("application/vnd", StringComparison.InvariantCultureIgnoreCase) &&
-				   contentMimeType.EndsWith("+xml", StringComparison.InvariantCultureIgnoreCase));
+				   contentMimeType.Equals("text/xml", StringComparison.InvariantCultureIgnoreCase);
 		}
 	}
 }

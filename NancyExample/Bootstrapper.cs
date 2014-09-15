@@ -1,10 +1,8 @@
 ﻿using Nancy.Bootstrapper;
-using Nancy.Responses;
 using Nancy.Responses.Negotiation;
 using Nancy.Serialization.JsonNet;
+using Nancy.TinyIoc;
 using Newtonsoft.Json;
-using JsonProcessor = Nancy.Responses.Negotiation.JsonProcessor;
-
 
 namespace NancyExample
 {
@@ -16,6 +14,13 @@ namespace NancyExample
 		{
 			get { return new NancyInternalConfigurationFactory().Build(); }
 		}
+
+		protected override void ConfigureApplicationContainer(TinyIoCContainer container)
+		{
+			base.ConfigureApplicationContainer(container);
+
+			container.Register(typeof(JsonSerializer), typeof(ExampleJsonSerializer));
+		}
 	}
 
 	public class NancyInternalConfigurationFactory
@@ -24,8 +29,9 @@ namespace NancyExample
 		{
 			return NancyInternalConfiguration.WithOverrides(c =>
 			{
+				// This is optional because of Nancy's serializers autodiscovery and priority
 				c.Serializers.Clear();
-				c.Serializers.Add(typeof(DefaultXmlSerializer));
+				c.Serializers.Add(typeof(ExampleXmlSerializer));
 				c.Serializers.Add(typeof(JsonNetSerializer));
 
 				c.ResponseProcessors.Clear();

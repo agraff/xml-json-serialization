@@ -71,18 +71,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="DefaultXmlSerializer.cs" />
+    <Compile Include="ExampleJsonSerializer.cs" />
+    <Compile Include="ExampleXmlSerializer.cs" />
     <Compile Include="DomainObjects\Response.cs" />
     <Compile Include="DomainObjects\TestData.cs" />
     <Compile Include="DomainObjects\Track.cs" />
     <Compile Include="DomainObjects\TracksRequest.cs" />
     <Compile Include="DomainObjects\TracksResponse.cs" />
     <Compile Include="ExampleModule.cs" />
-    <Compile Include="IJsonBody.cs" />
     <Compile Include="ExampleJsonProcessor.cs" />
-    <Compile Include="JsonNetSerializer.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

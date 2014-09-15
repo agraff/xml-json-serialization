@@ -20,13 +20,8 @@ namespace NancyExample.DomainObjects
 		public TrackList Tracks { get; set; }
 	}
 
-	//[DataContractAttribute(Name = "tracks")]
 	public class TrackList
-	{
-		[XmlElement("page")]
-		[DataMember(Name = "page")]
-		public int PageNumber { get; set; }
-
+	{	
 		[XmlElement("pageSize")]
 		[DataMember(Name = "pageSize")]
 		public int PageSize { get; set; }
@@ -35,8 +30,12 @@ namespace NancyExample.DomainObjects
 		[DataMember(Name = "totalItems")]
 		public int TotalItems { get; set; }
 
+		[XmlElement("page")]
+		[DataMember(Name = "page")]
+		public int PageNumber { get; set; }
+
 		[XmlElement("track")]
-		[DataMember(Name = "track")]
+		[DataMember(Name = "tracks")]
 		public List<Track> Track { get; set; }
 	}
 }

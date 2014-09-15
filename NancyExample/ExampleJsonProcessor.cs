@@ -84,8 +84,6 @@ namespace NancyExample
 
 			foreach (var property in properties)
 			{
-				var type = property.GetType();
-
 				var attributes = property.GetCustomAttributes(true);
 
 				if (attributes.OfType<DataMemberAttribute>().Any())

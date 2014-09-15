@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Timers;
 using NUnit.Framework;
 using Test.Common;
 using XmlJsonSerialization;
@@ -44,7 +44,15 @@ namespace NancyExample.Tests
 			{
 				request.Headers["Accept"] = String.Format("application/{0}", contentType);
 
+				DateTime endTime;
+				var startTime = new DateTime();
+				startTime = DateTime.Now;
+
 				var response = request.Send();
+				endTime = DateTime.Now;
+
+				var timeTaken = endTime.Subtract(startTime).Milliseconds;
+
 
 				Assert.That(response.StatusCode, Is.EqualTo(200));
 

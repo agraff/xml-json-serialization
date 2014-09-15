@@ -14,7 +14,8 @@ namespace NancyExample.DomainObjects
 		[JsonIgnore]
 		public string Version = "1.2";
 
-		[XmlAttribute(AttributeName = "noNamespaceSchemaLocation", Namespace = "http://www.w3.org/2001/XMLSchema-instance")] [ScriptIgnore]
+		[XmlAttribute(AttributeName = "noNamespaceSchemaLocation", Namespace = "http://www.w3.org/2001/XMLSchema-instance")]
+		[ScriptIgnore]
 		[JsonIgnore]
 		public string Schema = @"http://api.7digital.com/1.2/static/7digitalAPI.xsd";
 	}

@@ -32,10 +32,10 @@ namespace NancyExample.DomainObjects
 			{
 					Tracks = new TrackList
 						{
-							PageNumber = 2,
+							Page = 2,
 							PageSize = 3,
 							TotalItems = 1423,
-							Track = new List<Track> { track1, track2, track3 }
+							Tracks = new List<Track> { track1, track2, track3 }
 						}
 				};
 		}

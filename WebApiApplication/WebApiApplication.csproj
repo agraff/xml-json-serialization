@@ -147,7 +147,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\TracksController.cs" />
-    <Compile Include="DomainObjects\Response.cs" />
     <Compile Include="DomainObjects\TestData.cs" />
     <Compile Include="DomainObjects\Track.cs" />
     <Compile Include="DomainObjects\TracksResponse.cs" />

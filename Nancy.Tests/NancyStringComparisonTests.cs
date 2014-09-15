@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Timers;
 using NUnit.Framework;
 using Test.Common;
 using XmlJsonSerialization;
@@ -15,10 +11,7 @@ namespace NancyExample.Tests
 		[Test]
 		public void Xml_returned_matches_expected_xml()
 		{
-			var expectedXml = EmbeddedResource.GetContent("Expected.xml", GetType())
-			                                  .Replace("\r\n", string.Empty)
-			                                  .Replace("\t", string.Empty)
-			                                  .Replace(" ", string.Empty);
+			var expectedXml = EmbeddedResource.GetContent("Expected.xml", GetType());
 
 			Assert.That(CreateRequestAndGetResponse("xml"), Is.EqualTo(expectedXml));
 		}
@@ -27,15 +20,10 @@ namespace NancyExample.Tests
 		public void Json_returned_matches_expected_json()
 		{
 			var expectedJson = EmbeddedResource.GetContent("Expected.json", GetType());
-											  //.Replace("\r\n", string.Empty)
-											  //.Replace("\t", string.Empty)
-											  //.Replace(" ", string.Empty);
 
 			Assert.That(CreateRequestAndGetResponse("Json"), Is.EqualTo(expectedJson));
 		}
-
-
-
+		
 		private string CreateRequestAndGetResponse(string contentType)
 		{
 			var url = "http://localhost:8084/tracks?requestData=true";
@@ -53,12 +41,9 @@ namespace NancyExample.Tests
 
 				var timeTaken = endTime.Subtract(startTime).Milliseconds;
 
-
 				Assert.That(response.StatusCode, Is.EqualTo(200));
 
-				var stringToReturn = response.Body;
-				stringToReturn = stringToReturn.Replace("\r\n", string.Empty).Replace("\t", string.Empty).Replace(" ", string.Empty);
-				return stringToReturn;
+				return response.Body;;
 			}
 		}
 	}

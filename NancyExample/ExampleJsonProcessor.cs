@@ -74,8 +74,7 @@ namespace NancyExample
 		/// <param name="context">The nancy context</param>
 		/// <returns>A response</returns>
 		public Response Process(MediaRange requestedMediaRange, dynamic model, NancyContext context)
-		{
-			
+		{	
 			Type modelType = model.GetType();
 
 			object modelToSerialize = (object) model;

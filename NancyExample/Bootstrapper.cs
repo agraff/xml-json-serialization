@@ -18,7 +18,6 @@ namespace NancyExample
 		protected override void ConfigureApplicationContainer(TinyIoCContainer container)
 		{
 			base.ConfigureApplicationContainer(container);
-
 			container.Register(typeof(JsonSerializer), typeof(ExampleJsonSerializer));
 		}
 	}

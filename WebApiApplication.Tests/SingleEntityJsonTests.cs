@@ -36,7 +36,7 @@ namespace WebApiApplication.Tests
 		[Test]
 		public void SingleContentMatchesExpectedJson()
 		{
-			var expectedContent = EmbeddedResource.GetContent("ExpectedSingleEntity.json", GetType());
+			var expectedContent = EmbeddedResource.GetContent("ExpectedSingleEntity.json");
 
 			Assert.That(Content, Is.EqualTo(expectedContent));
 		}
@@ -44,7 +44,7 @@ namespace WebApiApplication.Tests
 		[Test]
 		public void SingleContentMatchesExpectedJsonIgnoringWhitespace()
 		{
-			var expectedContent = EmbeddedResource.GetContent("ExpectedSingleEntity.json", GetType());
+			var expectedContent = EmbeddedResource.GetContent("ExpectedSingleEntity.json");
 
 			var contentWithoutWhitespace = Regex.Replace(Content, @"\s", "");
 			var expectedContentWithoutWhitespace = Regex.Replace(expectedContent, @"\s", "");

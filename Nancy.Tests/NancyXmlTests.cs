@@ -21,7 +21,7 @@ namespace NancyExample.Tests
 		{
 			Content = Client.GetXml("tracks", Parameter);
 
-			var expectedXml = EmbeddedResource.GetContent("Expected.xml", GetType());
+			var expectedXml = EmbeddedResource.GetContent("Expected.xml");
 
 			Assert.That(Content, Is.EqualTo(expectedXml));
 		}
@@ -32,33 +32,9 @@ namespace NancyExample.Tests
 		{
 			Content = Client.GetXml("SingleTrack", Parameter);
 
-			var expectedSingleXml = EmbeddedResource.GetContent("ExpectedSingleEntity.xml", GetType());
+			var expectedSingleXml = EmbeddedResource.GetContent("ExpectedSingleEntity.xml");
 
 			Assert.That(Content, Is.EqualTo(expectedSingleXml));
-		}
-
-		
-	
-		
-		private string CreateRequestAndGetResponse(string contentType, string url)
-		{
-			using (var request = new HttpRequest(url))
-			{
-				request.Headers["Accept"] = String.Format("application/{0}", contentType);
-
-				DateTime endTime;
-				var startTime = new DateTime();
-				startTime = DateTime.Now;
-
-				var response = request.Send();
-				endTime = DateTime.Now;
-
-				var timeTaken = endTime.Subtract(startTime).Milliseconds;
-
-				Assert.That(response.StatusCode, Is.EqualTo(200));
-
-				return response.Body;;
-			}
 		}
 	}
 }

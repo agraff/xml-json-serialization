@@ -6,16 +6,18 @@ namespace Test.Common
 {
 	public static class EmbeddedResource
 	{
-		public static string GetContent(string resourceName, Type relativeToType)
+		public static string GetContent(string resourceName)
 		{
-			var assembly = Assembly.GetAssembly(relativeToType);
-			var fullResourceName = String.Format("{0}.{1}", relativeToType.Namespace, resourceName);
+		//var assembly = Assembly.GetAssembly()
+		//var fullResourceName = String.Format("{0}.{1}", "Test.Common", resourceName);
 
-			using (var stream = assembly.GetManifestResourceStream(fullResourceName))
-			using (var reader = new StreamReader(stream))
+		//	using (var stream = assembly.GetManifestResourceStream(fullResourceName))
+			using (var reader = new StreamReader(string.Concat(@"C:\Work\POC\xml-json-serialization\Test.Common\", resourceName)))
 			{
 				return reader.ReadToEnd();
 			}
+			
+
 		}
 	}
 }

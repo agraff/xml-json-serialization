@@ -16,7 +16,7 @@ namespace WebApiApplication.Tests
 		{
 			const string resourceName = "Expected.xml";
 
-			var xml = EmbeddedResource.GetContent(resourceName, GetType());
+			var xml = EmbeddedResource.GetContent(resourceName);
 			var xDocument = XDocument.Parse(xml);
 			var formattedXml = xDocument.Declaration + Environment.NewLine + xDocument;
 
@@ -28,7 +28,7 @@ namespace WebApiApplication.Tests
 		{
 			const string resourceName = "Expected.json";
 
-			var json = EmbeddedResource.GetContent(resourceName, GetType());
+			var json = EmbeddedResource.GetContent(resourceName);
 			var formattedJson = JsonConvert.DeserializeObject<dynamic>(json).ToString();
 
 			Print(formattedJson, resourceName);

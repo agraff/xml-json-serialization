@@ -47,7 +47,15 @@
     <Compile Include="SerialisationTestsBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Expected.json" />
+    <EmbeddedResource Include="ExpectedSingleEntity.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Expected.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpectedSingleEntity.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

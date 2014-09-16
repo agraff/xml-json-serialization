@@ -24,7 +24,7 @@ namespace NancyExample.Tests
 		{
 			Content = Client.GetJson("SingleTrack", Parameter);
 
-			var expectedSingleJson = EmbeddedResource.GetContent("ExpectedSingleEntity.json", GetType());
+			var expectedSingleJson = EmbeddedResource.GetContent("ExpectedSingleEntity.json");
 
 			Assert.That(Content, Is.EqualTo(expectedSingleJson));
 		}
@@ -34,7 +34,7 @@ namespace NancyExample.Tests
 		{
 			Content = Client.GetJson("tracks", Parameter);
 
-			var expectedJson = EmbeddedResource.GetContent("Expected.json", GetType());
+			var expectedJson = EmbeddedResource.GetContent("Expected.json");
 
 			Assert.That(Content, Is.EqualTo(expectedJson));
 		}

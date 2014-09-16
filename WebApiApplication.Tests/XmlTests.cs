@@ -31,7 +31,7 @@ namespace WebApiApplication.Tests
 		[Test]
 		public void ContentMatchesExpectedXml()
 		{
-			var expectedContent = EmbeddedResource.GetContent("Expected.xml", GetType());
+			var expectedContent = EmbeddedResource.GetContent("Expected.xml");
 
 			Assert.That(Content, Is.EqualTo(expectedContent));
 		}
@@ -39,7 +39,7 @@ namespace WebApiApplication.Tests
 		[Test]
 		public void ContentMatchesExpectedXmlIgnoringWhitespace()
 		{
-			var expectedContent = EmbeddedResource.GetContent("Expected.xml", GetType());
+			var expectedContent = EmbeddedResource.GetContent("Expected.xml");
 
 			var contentWithoutWhitespace = Regex.Replace(Content, @"\s", "");
 			var expectedContentWithoutWhitespace = Regex.Replace(expectedContent, @"\s", "");

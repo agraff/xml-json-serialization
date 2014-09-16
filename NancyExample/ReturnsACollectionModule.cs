@@ -4,11 +4,11 @@ using NancyExample.DomainObjects;
 
 namespace NancyExample
 {
-	public class ExampleModule : NancyModule
+	public class ReturnsACollectionModule : NancyModule
 	{
 		private TestData _testData;
 
-		public ExampleModule()
+		public ReturnsACollectionModule()
 		{
 			_testData = new TestData();
 

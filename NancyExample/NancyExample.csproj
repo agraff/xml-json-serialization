@@ -71,6 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="DomainObjects\SingleTrackRequest.cs" />
+    <Compile Include="DomainObjects\SingleTrackResponse.cs" />
+    <Compile Include="ReturnsSingleEntityModule.cs" />
     <Compile Include="ExampleJsonSerializer.cs" />
     <Compile Include="ExampleXmlSerializer.cs" />
     <Compile Include="DomainObjects\Response.cs" />
@@ -78,7 +81,7 @@
     <Compile Include="DomainObjects\Track.cs" />
     <Compile Include="DomainObjects\TracksRequest.cs" />
     <Compile Include="DomainObjects\TracksResponse.cs" />
-    <Compile Include="ExampleModule.cs" />
+    <Compile Include="ReturnsACollectionModule.cs" />
     <Compile Include="ExampleJsonProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

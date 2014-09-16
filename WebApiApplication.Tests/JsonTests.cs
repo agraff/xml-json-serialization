@@ -32,7 +32,7 @@ namespace WebApiApplication.Tests
 		[Test]
 		public void ContentMatchesExpectedJson()
 		{
-			var expectedContent = EmbeddedResource.GetContent("Expected.json");
+			var expectedContent = Test.Common.Properties.Resources.ExpectedJson;
 
 			Assert.That(Content, Is.EqualTo(expectedContent));
 		}
@@ -40,7 +40,7 @@ namespace WebApiApplication.Tests
 		[Test]
 		public void ContentMatchesExpectedJsonIgnoringWhitespace()
 		{
-			var expectedContent = EmbeddedResource.GetContent("Expected.json");
+			var expectedContent = Test.Common.Properties.Resources.ExpectedJson;
 
 			var contentWithoutWhitespace = Regex.Replace(Content, @"\s", "");
 			var expectedContentWithoutWhitespace = Regex.Replace(expectedContent, @"\s", "");

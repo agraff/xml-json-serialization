@@ -21,7 +21,7 @@ namespace NancyExample.Tests
 		{
 			Content = Client.GetXml("tracks", Parameter);
 
-			var expectedXml = EmbeddedResource.GetContent("Expected.xml");
+			var expectedXml = Test.Common.Properties.Resources.ExpectedXml;
 
 			Assert.That(Content, Is.EqualTo(expectedXml));
 		}
@@ -32,8 +32,8 @@ namespace NancyExample.Tests
 		{
 			Content = Client.GetXml("SingleTrack", Parameter);
 
-			var expectedSingleXml = EmbeddedResource.GetContent("ExpectedSingleEntity.xml");
-
+			var expectedSingleXml = Test.Common.Properties.Resources.ExpectedSingleEntityXml;
+			
 			Assert.That(Content, Is.EqualTo(expectedSingleXml));
 		}
 	}

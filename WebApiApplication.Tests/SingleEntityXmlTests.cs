@@ -36,7 +36,7 @@ namespace WebApiApplication.Tests
 		[Test]
 		public void SingleContentMatchesExpectedXml()
 		{
-			var expectedContent = EmbeddedResource.GetContent("ExpectedSingleEntity.xml");
+			var expectedContent = Test.Common.Properties.Resources.ExpectedSingleEntityXml;
 
 			Assert.That(Content, Is.EqualTo(expectedContent));
 		}
@@ -44,7 +44,7 @@ namespace WebApiApplication.Tests
 		[Test]
 		public void SingleContentMatchesExpectedXmlIgnoringWhitespace()
 		{
-			var expectedContent = EmbeddedResource.GetContent("ExpectedSingleEntity.xml");
+			var expectedContent = Test.Common.Properties.Resources.ExpectedSingleEntityXml;
 
 			var contentWithoutWhitespace = Regex.Replace(Content, @"\s", "");
 			var expectedContentWithoutWhitespace = Regex.Replace(expectedContent, @"\s", "");

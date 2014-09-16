@@ -14,24 +14,21 @@ namespace WebApiApplication.Tests
 		[Test]
 		public void PrettyPrintXml()
 		{
-			const string resourceName = "Expected.xml";
-
-			var xml = EmbeddedResource.GetContent(resourceName);
+			var xml = Test.Common.Properties.Resources.ExpectedXml;
+			
 			var xDocument = XDocument.Parse(xml);
 			var formattedXml = xDocument.Declaration + Environment.NewLine + xDocument;
 
-			Print(formattedXml, resourceName);
+			Print(formattedXml, "Expected.xml");
 		}
 
 		[Test]
 		public void PrettyPrintJson()
 		{
-			const string resourceName = "Expected.json";
-
-			var json = EmbeddedResource.GetContent(resourceName);
+			var json = Test.Common.Properties.Resources.ExpectedJson;
 			var formattedJson = JsonConvert.DeserializeObject<dynamic>(json).ToString();
 
-			Print(formattedJson, resourceName);
+			Print(formattedJson, "Expected.json");
 		}
 
 		private static void Print(string content, string resourceName)

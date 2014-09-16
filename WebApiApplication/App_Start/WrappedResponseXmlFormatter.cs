@@ -60,11 +60,11 @@ namespace WebApiApplication
 			const string xsd = "http://www.w3.org/2001/XMLSchema";
 			const string noNamespaceSchemaLocation = "http://api.7digital.com/1.2/static/7digitalAPI.xsd";
 			return new XElement("response",
-				new XAttribute(XNamespace.Xmlns + "xsi", xsi),
 				new XAttribute(XNamespace.Xmlns + "xsd", xsd),
-				new XAttribute(XNamespace.Get(xsi) + "noNamespaceSchemaLocation", noNamespaceSchemaLocation),
+				new XAttribute(XNamespace.Xmlns + "xsi", xsi),
 				new XAttribute("status", "ok"),
-				new XAttribute("version", "1.2"));
+				new XAttribute("version", "1.2"),
+				new XAttribute(XNamespace.Get(xsi) + "noNamespaceSchemaLocation", noNamespaceSchemaLocation));
 		}
 
 		private static void WriteXDocToStream(XDocument xDoc, Stream stream)

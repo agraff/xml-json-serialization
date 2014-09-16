@@ -15,7 +15,7 @@ namespace WebApiApplication.Tests
 		[TestFixtureSetUp]
 		public void GetXmlResponse()
 		{
-			var client = FixtureSetup.CreateWebApiClient("http://localhost:57007/api");
+			var client = new ApiClient("http://localhost:57007/api");
 
 			Content = client.GetXml("SingleTrack");
 		}

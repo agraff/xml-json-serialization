@@ -10,7 +10,7 @@ namespace NancyExample.Tests
 		[TestFixtureSetUp]
 		public void GetXmlResponse()
 		{
-			Client = FixtureSetup.CreateWebApiClient("http://localhost:8084/");
+			Client = new ApiClient("http://localhost:8084/");
 			Parameter = new Parameter {Name = "requestData", Value = "true"};
 		}
 

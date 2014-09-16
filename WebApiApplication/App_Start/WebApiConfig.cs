@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
+using System.Web.Mvc;
 using Newtonsoft.Json.Serialization;
 
 namespace WebApiApplication
@@ -9,6 +10,12 @@ namespace WebApiApplication
 	{
 		public static void Register(HttpConfiguration config)
 		{
+			config.Routes.MapHttpRoute(
+				name: "SingleTrack",
+				routeTemplate: "api/SingleTrack/{id}",
+				defaults: new { controller = "SingleTrack", id = RouteParameter.Optional }
+			);
+
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
 				routeTemplate: "api/{controller}/{id}",

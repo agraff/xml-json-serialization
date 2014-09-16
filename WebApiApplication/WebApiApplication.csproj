@@ -146,7 +146,9 @@
     <Compile Include="App_Start\WrappedResponseXmlFormatter.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\SingleTrackController.cs" />
     <Compile Include="Controllers\TracksController.cs" />
+    <Compile Include="DomainObjects\SingleTrackResponse.cs" />
     <Compile Include="DomainObjects\TestData.cs" />
     <Compile Include="DomainObjects\Track.cs" />
     <Compile Include="DomainObjects\TracksResponse.cs" />

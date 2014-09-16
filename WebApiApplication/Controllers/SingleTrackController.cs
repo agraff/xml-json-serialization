@@ -9,16 +9,13 @@ namespace WebApiApplication.Controllers
 {
 	public class SingleTrackController : ApiController
 	{
-		public SingleTrackResponse Get()
+		public Track Get()
 		{
-			return new SingleTrackResponse
+			return new Track
 			{
-				Track = new Track
-				{
-					ReleaseDateTime = new DateTime(1998, 03, 21, 09, 30, 00, DateTimeKind.Utc),
-					Number = 1,
-					Title = "Hello"
-				}
+				ReleaseDateTime = new DateTime(1998, 03, 21, 09, 30, 00, DateTimeKind.Utc),
+				Number = 1,
+				Title = "Hello"
 			};
 		}
 	}

@@ -12,8 +12,6 @@ namespace NancyExample.Tests
 		{
 			Client = FixtureSetup.CreateWebApiClient("http://localhost:8084/");
 			Parameter = new Parameter {Name = "requestData", Value = "true"};
-			
-			Content = Client.GetXml("tracks",Parameter );
 		}
 
 		[Test]

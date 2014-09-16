@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
     </Reference>
@@ -38,8 +41,10 @@
   <ItemGroup>
     <Compile Include="ApiClient.cs" />
     <Compile Include="EmbeddedResource.cs" />
+    <Compile Include="FixtureSetup.cs" />
     <Compile Include="Parameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerialisationTestsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Net;
 
-namespace XmlJsonSerialization
+namespace NancyExample.Tests
 {
 	public class HttpResponse
 	{

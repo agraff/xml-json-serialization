@@ -11,7 +11,7 @@ namespace WebApiApplication.Tests
 		[TestFixtureSetUp]
 		public void GetJsonResponse()
 		{
-			var client = FixtureSetup.CreateWebApiClient();
+			var client = FixtureSetup.CreateWebApiClient("http://localhost:57007/api");
 
 			Content = client.GetJson("tracks");
 		}

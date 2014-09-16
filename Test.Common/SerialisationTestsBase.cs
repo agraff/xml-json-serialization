@@ -1,9 +1,12 @@
 ﻿using System;
 
-namespace WebApiApplication.Tests
+namespace Test.Common
 {
 	public class SerialisationTestsBase
 	{
+		public ApiClient Client { get; set; }
+		public Parameter Parameter { get; set; }
+	
 		private string _content;
 		protected string Content
 		{

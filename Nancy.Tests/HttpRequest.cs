@@ -4,7 +4,7 @@ using System.Net;
 using System.Text;
 using System.Web;
 
-namespace XmlJsonSerialization
+namespace NancyExample.Tests
 {
 	public class HttpRequest : IDisposable
 	{

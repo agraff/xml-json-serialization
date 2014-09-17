@@ -3,9 +3,8 @@ using System.IO;
 using System.Xml.Linq;
 using NUnit.Framework;
 using Newtonsoft.Json;
-using Test.Common;
 
-namespace WebApiApplication.Tests
+namespace Test.Common
 {
 	[TestFixture]
 	[Explicit]

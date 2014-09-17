@@ -1,14 +1,14 @@
 ﻿using NUnit.Framework;
 using Test.Common;
 
-namespace NancyExample.Tests
+namespace Test.Common
 {
 	[TestFixture]
-	class NancyJsonTests : JsonTestsBase
+	public class WebApiJsonTests : JsonTestsBase
 	{
 		protected override string ApiUrl
 		{
-			get { return "http://localhost:8084/"; }
+			get { return "http://localhost:57007/api"; }
 		}
 	}
 }

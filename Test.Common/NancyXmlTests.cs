@@ -1,8 +1,6 @@
-﻿using System;
-using NUnit.Framework;
-using Test.Common;
+﻿using NUnit.Framework;
 
-namespace NancyExample.Tests
+namespace Test.Common
 {
 	[TestFixture]
 	public class NancyXmlTests : XmlTestsBase

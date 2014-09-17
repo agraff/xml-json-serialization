@@ -11,7 +11,6 @@ namespace NancyExample.DomainObjects
 	public class SingleTrackResponse : Response
 	{
 		[XmlElement("track")]
-		[DataMember]
 		public Track Track { get; set; }
 	}
 }

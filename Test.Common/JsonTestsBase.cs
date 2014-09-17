@@ -20,7 +20,7 @@ namespace Test.Common
 		}
 
 		[Test]
-		public void ContentIsNotEmpty()
+		public void Content_Is_Not_Empty()
 		{
 			var content = GetJsonResponse("tracks");
 
@@ -28,7 +28,7 @@ namespace Test.Common
 		}
 
 		[Test]
-		public void ContentIsValidJson()
+		public void Content_Is_Valid_Json()
 		{
 			var content = GetJsonResponse("tracks");
 			var deserializedObject = JsonConvert.DeserializeObject<dynamic>(content);
@@ -37,7 +37,7 @@ namespace Test.Common
 		}
 
 		[Test]
-		public void ContentMatchesExpectedJson()
+		public void Content_Matches_Expected_Json()
 		{
 			var expectedContent = Properties.Resources.ExpectedJson;
 
@@ -47,7 +47,7 @@ namespace Test.Common
 		}
 
 		[Test]
-		public void SingleContentIsNotEmpty()
+		public void Single_Content_Is_Not_Empty()
 		{
 			var content = GetJsonResponse("singleTrack");
 
@@ -55,7 +55,7 @@ namespace Test.Common
 		}
 
 		[Test]
-		public void SingleContentIsValidJson()
+		public void Single_Content_Is_Valid_Json()
 		{
 			var content = GetJsonResponse("singleTrack");
 			var deserializedObject = JsonConvert.DeserializeObject<dynamic>(content);
@@ -64,7 +64,7 @@ namespace Test.Common
 		}
 
 		[Test]
-		public void Json_SingleEntity_returned_matches_expected_Json()
+		public void Single_Content_matches_expected_Json()
 		{
 			var expectedSingleJson = Properties.Resources.ExpectedSingleEntityJson;
 

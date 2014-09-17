@@ -48,7 +48,6 @@
     <Compile Include="PrettyPrintExpectedContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="JsonTests.cs" />
-    <Compile Include="SingleEntityXmlTests.cs" />
     <Compile Include="XmlTests.cs" />
   </ItemGroup>
   <ItemGroup>

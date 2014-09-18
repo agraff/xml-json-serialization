@@ -25,6 +25,6 @@ namespace NancyExample.DomainObjects
 		public int TotalItems { get; set; }
 
 		[XmlElement("track")]
-		public List<TrackViewModel> Tracks { get; set; }
+		public TrackViewModel[] Tracks { get; set; }
 	}
 }

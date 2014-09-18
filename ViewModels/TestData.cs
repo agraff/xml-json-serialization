@@ -15,7 +15,7 @@ namespace ViewModels
 			};
 		}
 
-		private static TrackViewModel[] GetTracks()
+		public static TrackViewModel[] GetTracks()
 		{
 			return new[]
 			{
@@ -37,6 +37,16 @@ namespace ViewModels
 					Number = 13,
 					ReleaseDateTime = new DateTime(2014, 07, 30, 17, 12, 56, DateTimeKind.Utc)
 				}
+			};
+		}
+
+		public static TrackViewModel GetTrack()
+		{
+			return new TrackViewModel
+			{
+				ReleaseDateTime = new DateTime(1998, 03, 21, 09, 30, 00, DateTimeKind.Utc),
+				Number = 1,
+				Title = "Hello"
 			};
 		}
 	}

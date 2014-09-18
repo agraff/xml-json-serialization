@@ -1,9 +1,6 @@
-﻿using System.Linq;
-using System.Net.Http.Formatting;
+﻿using System.Net.Http.Formatting;
 using System.Web.Http;
-using System.Web.Mvc;
-using Newtonsoft.Json.Serialization;
-using WebApiApplication.App_Start;
+using WebApiApplication.Formatters;
 
 namespace WebApiApplication
 {

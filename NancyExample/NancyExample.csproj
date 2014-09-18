@@ -77,13 +77,13 @@
     <Compile Include="DomainObjects\TrackRequest.cs" />
     <Compile Include="DomainObjects\SingleTrackResponse.cs" />
     <Compile Include="Modules\TrackModule.cs" />
-    <Compile Include="ExampleJsonSerializer.cs" />
-    <Compile Include="ExampleXmlSerializer.cs" />
+    <Compile Include="Serializers\ExampleJsonSerializer.cs" />
+    <Compile Include="Serializers\ExampleXmlSerializer.cs" />
     <Compile Include="DomainObjects\Response.cs" />
     <Compile Include="DomainObjects\TracksRequest.cs" />
     <Compile Include="DomainObjects\TracksResponse.cs" />
     <Compile Include="Modules\TracksModule.cs" />
-    <Compile Include="ExampleJsonProcessor.cs" />
+    <Compile Include="Serializers\ExampleJsonProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

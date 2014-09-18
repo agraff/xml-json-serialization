@@ -1,15 +1,14 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
 using Nancy;
+using Nancy.Responses;
 using Nancy.Responses.Negotiation;
-using NancyExample.DomainObjects;
 using Response = Nancy.Response;
 
-namespace NancyExample
+namespace NancyExample.Serializers
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using Nancy.Responses;
 	/// <summary>
 	/// Processes the model for json media types and extension.
 	/// </summary>

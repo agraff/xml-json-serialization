@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using ViewModels;
 
-namespace WebApiApplication.App_Start
+namespace WebApiApplication.Formatters
 {
 	public class WrappedJsonFormatter : BufferedMediaTypeFormatter
 	{

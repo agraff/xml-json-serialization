@@ -1,13 +1,13 @@
-﻿using Nancy.Bootstrapper;
+﻿using Nancy;
+using Nancy.Bootstrapper;
 using Nancy.Responses.Negotiation;
 using Nancy.Serialization.JsonNet;
 using Nancy.TinyIoc;
+using NancyExample.Serializers;
 using Newtonsoft.Json;
 
 namespace NancyExample
 {
-	using Nancy;
-
 	public class Bootstrapper : DefaultNancyBootstrapper
 	{
 		protected override NancyInternalConfiguration InternalConfiguration

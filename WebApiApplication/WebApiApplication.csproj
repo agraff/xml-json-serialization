@@ -129,10 +129,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\WrappedJsonFormatter.cs" />
-    <Compile Include="App_Start\WrappedXmlFormatter.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Formatters\WrappedJsonFormatter.cs" />
+    <Compile Include="Formatters\WrappedXmlFormatter.cs" />
+    <Compile Include="FilterConfig.cs" />
+    <Compile Include="WebApiConfig.cs" />
     <Compile Include="Controllers\TrackController.cs" />
     <Compile Include="Controllers\TracksController.cs" />
     <Compile Include="Global.asax.cs">

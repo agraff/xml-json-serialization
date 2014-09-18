@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiClient.cs" />
+    <Compile Include="ContentNegotiationTests.cs" />
     <Compile Include="Xml\XmlTests.cs" />
     <Compile Include="Json\JsonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

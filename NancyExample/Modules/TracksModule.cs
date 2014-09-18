@@ -5,10 +5,10 @@ using ViewModels;
 
 namespace NancyExample.Modules
 {
-	public class ReturnsACollectionModule : NancyModule
+	public class TracksModule : NancyModule
 	{
 
-		public ReturnsACollectionModule()
+		public TracksModule()
 		{
 			Get["/tracks"] = parameters =>
 			{

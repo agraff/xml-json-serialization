@@ -76,13 +76,13 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="DomainObjects\TrackRequest.cs" />
     <Compile Include="DomainObjects\SingleTrackResponse.cs" />
-    <Compile Include="Modules\ReturnsSingleEntityModule.cs" />
+    <Compile Include="Modules\TrackModule.cs" />
     <Compile Include="ExampleJsonSerializer.cs" />
     <Compile Include="ExampleXmlSerializer.cs" />
     <Compile Include="DomainObjects\Response.cs" />
     <Compile Include="DomainObjects\TracksRequest.cs" />
     <Compile Include="DomainObjects\TracksResponse.cs" />
-    <Compile Include="Modules\ReturnsACollectionModule.cs" />
+    <Compile Include="Modules\TracksModule.cs" />
     <Compile Include="ExampleJsonProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

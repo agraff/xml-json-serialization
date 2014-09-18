@@ -6,10 +6,10 @@ using ViewModels;
 
 namespace NancyExample.Modules
 {
-	public class ReturnsSingleEntityModule : NancyModule
+	public class TrackModule : NancyModule
 	{
 
-		public ReturnsSingleEntityModule()
+		public TrackModule()
 		{
 			Get["/track"] = parameters =>
 			{

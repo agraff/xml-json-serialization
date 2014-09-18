@@ -129,6 +129,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\InfoController.cs" />
     <Compile Include="Formatters\WrappedJsonFormatter.cs" />
     <Compile Include="Formatters\WrappedXmlFormatter.cs" />
     <Compile Include="FilterConfig.cs" />

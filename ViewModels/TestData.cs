@@ -49,5 +49,13 @@ namespace ViewModels
 				Title = "Hello"
 			};
 		}
+
+		public static InfoViewModel GetInfo(string apiType)
+		{
+			return new InfoViewModel()
+			{
+				Technology = apiType
+			};
+		}
 	}
 }

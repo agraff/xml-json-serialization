@@ -1,6 +1,5 @@
 ﻿using System;
 using Nancy;
-using Nancy.ModelBinding;
 using NancyExample.ViewModels;
 using ViewModels;
 

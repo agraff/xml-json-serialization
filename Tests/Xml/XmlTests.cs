@@ -8,10 +8,12 @@ namespace Tests.Xml
 	[TestFixture("WebApi", "http://localhost/api-examples/webapi/api")]
 	public class JsonTests
 	{
+		private readonly string _apiType;
 		private readonly string _apiUrl;
 
 		public JsonTests(string apiType, string apiUrl)
 		{
+			_apiType = apiType;
 			_apiUrl = apiUrl;
 		}
 
@@ -77,6 +79,16 @@ namespace Tests.Xml
 			var content = GetXmlResponse("track");
 
 			Assert.That(content, Is.EqualTo(expectedTrackXml));
+		}
+
+		[Test]
+		public void Uses_expected_technology()
+		{
+			var content = GetXmlResponse("info");
+
+			Assert.That(content, Is.StringContaining("info"));
+			Assert.That(content, Is.StringContaining("technology"));
+			Assert.That(content, Is.StringContaining(_apiType));
 		}
 	}
 }

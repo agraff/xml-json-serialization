@@ -77,7 +77,6 @@
     <Compile Include="ExampleJsonSerializer.cs" />
     <Compile Include="ExampleXmlSerializer.cs" />
     <Compile Include="DomainObjects\Response.cs" />
-    <Compile Include="DomainObjects\TestData.cs" />
     <Compile Include="DomainObjects\TracksRequest.cs" />
     <Compile Include="DomainObjects\TracksResponse.cs" />
     <Compile Include="ReturnsACollectionModule.cs" />

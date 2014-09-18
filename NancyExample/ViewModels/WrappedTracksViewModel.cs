@@ -2,7 +2,7 @@
 using System.Xml.Serialization;
 using ViewModels;
 
-namespace NancyExample.DomainObjects
+namespace NancyExample.ViewModels
 {
 	[XmlRoot("response")]
 	public class WrappedTracksViewModel : ResponseViewModel

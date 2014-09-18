@@ -1,5 +1,5 @@
 ﻿using Nancy;
-using NancyExample.DomainObjects;
+using NancyExample.ViewModels;
 using ViewModels;
 
 namespace NancyExample.Modules

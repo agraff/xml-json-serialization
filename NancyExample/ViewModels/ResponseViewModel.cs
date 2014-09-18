@@ -1,7 +1,7 @@
 ﻿using System.Xml.Serialization;
 using Newtonsoft.Json;
 
-namespace NancyExample.DomainObjects
+namespace NancyExample.ViewModels
 {
 	public class ResponseViewModel
 	{

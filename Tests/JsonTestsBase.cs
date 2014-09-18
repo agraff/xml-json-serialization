@@ -8,7 +8,7 @@ namespace Tests
 	{
 		protected abstract string ApiUrl { get; }
 
-		public string GetJsonResponse(string endpoint)
+		private string GetJsonResponse(string endpoint)
 		{
 			var client = new ApiClient(ApiUrl);
 			var content = client.GetJson(endpoint);

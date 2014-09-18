@@ -48,7 +48,6 @@
     <Compile Include="ApiClient.cs" />
     <Compile Include="NancyJsonTests.cs" />
     <Compile Include="NancyXmlTests.cs" />
-    <Compile Include="PrettyPrintExpectedContent.cs" />
     <Compile Include="WebApiJsonTests.cs" />
     <Compile Include="WebApiXmlTests.cs" />
     <Compile Include="XmlTestsBase.cs" />

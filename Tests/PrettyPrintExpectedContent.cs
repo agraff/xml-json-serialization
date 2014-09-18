@@ -14,7 +14,7 @@ namespace Tests
 		[Test]
 		public void PrettyPrintXml()
 		{
-			var xml = Resources.ExpectedXml;
+			var xml = Resources.TracksXml;
 			
 			var xDocument = XDocument.Parse(xml);
 			var formattedXml = xDocument.Declaration + Environment.NewLine + xDocument;
@@ -25,7 +25,7 @@ namespace Tests
 		[Test]
 		public void PrettyPrintJson()
 		{
-			var json = Resources.ExpectedJson;
+			var json = Resources.TracksJson;
 			var formattedJson = JsonConvert.DeserializeObject<dynamic>(json).ToString();
 
 			Print(formattedJson, "Expected.json");

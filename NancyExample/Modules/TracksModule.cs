@@ -6,7 +6,6 @@ namespace NancyExample.Modules
 {
 	public class TracksModule : NancyModule
 	{
-
 		public TracksModule()
 		{
 			Get["/tracks"] = parameters => _Get();
@@ -20,5 +19,4 @@ namespace NancyExample.Modules
 			};
 		}
 	}
-
 }

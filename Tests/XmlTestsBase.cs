@@ -39,7 +39,7 @@ namespace Tests
 		[Test]
 		public void Content_Matches_Expected_Xml()
 		{
-			var expectedContent = Properties.Resources.ExpectedXml;
+			var expectedContent = Properties.Resources.TracksXml;
 
 			var content = GetXmlResponse("tracks");
 
@@ -70,7 +70,7 @@ namespace Tests
 		{
 			var content = GetXmlResponse("track");
 
-			var expectedSingleXml = Properties.Resources.ExpectedSingleEntityXml;
+			var expectedSingleXml = Properties.Resources.TrackXml;
 
 			Assert.That(content, Is.EqualTo(expectedSingleXml));
 		}

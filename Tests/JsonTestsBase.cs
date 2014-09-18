@@ -38,7 +38,7 @@ namespace Tests
 		[Test]
 		public void Content_Matches_Expected_Json()
 		{
-			var expectedContent = Properties.Resources.ExpectedJson;
+			var expectedContent = Properties.Resources.TracksJson;
 
 			var content = GetJsonResponse("tracks");
 
@@ -65,7 +65,7 @@ namespace Tests
 		[Test]
 		public void Single_Content_matches_expected_Json()
 		{
-			var expectedSingleJson = Properties.Resources.ExpectedSingleEntityJson;
+			var expectedSingleJson = Properties.Resources.TrackJson;
 
 			var content = GetJsonResponse("track");
 

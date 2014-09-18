@@ -44,7 +44,6 @@ namespace NancyExample.Serializers
 		public void Serialize<TModel>(string contentType, TModel model, Stream outputStream)
 		{
 			var serializer = new XmlSerializer(typeof(TModel));
-
 			var xmlWriterSettings = new XmlWriterSettings 
 			{
 				Indent = false, 
@@ -54,9 +53,6 @@ namespace NancyExample.Serializers
 			{
 				serializer.Serialize(writer, model);
 			}
-
-			// var streamWriter = new StreamWriter(outputStream, System.Text.Encoding.UTF8);
-			// serializer.Serialize(streamWriter, model);
 		}
 
 		private static bool IsXmlType(string contentType)
@@ -67,7 +63,6 @@ namespace NancyExample.Serializers
 			}
 
 			var contentMimeType = contentType.Split(';')[0];
-
 			return contentMimeType.Equals("application/xml", StringComparison.InvariantCultureIgnoreCase) ||
 				   contentMimeType.Equals("text/xml", StringComparison.InvariantCultureIgnoreCase);
 		}

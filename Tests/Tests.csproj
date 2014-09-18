@@ -61,19 +61,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Expected.json" />
-    <EmbeddedResource Include="ExpectedSingleEntity.json" />
+    <EmbeddedResource Include="Tracks.json" />
+    <EmbeddedResource Include="Track.json" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Expected.xml" />
+    <EmbeddedResource Include="Tracks.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ExpectedSingleEntity.xml" />
+    <EmbeddedResource Include="Track.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

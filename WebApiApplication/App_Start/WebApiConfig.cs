@@ -3,6 +3,7 @@ using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Mvc;
 using Newtonsoft.Json.Serialization;
+using WebApiApplication.App_Start;
 
 namespace WebApiApplication
 {
@@ -38,15 +39,17 @@ namespace WebApiApplication
 			var standardXmlFormatter = GlobalConfiguration.Configuration.Formatters.XmlFormatter;
 			GlobalConfiguration.Configuration.Formatters.Remove(standardXmlFormatter);
 			
-			var customXmlFormatter = new WrappedResponseXmlFormatter();
+			var customXmlFormatter = new WrappedXmlFormatter();
 			GlobalConfiguration.Configuration.Formatters.Add(customXmlFormatter);
 		}
 
 		private static void SetupJsonSerialiser()
 		{
-			var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+			var standardJsonFormatter = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+			GlobalConfiguration.Configuration.Formatters.Remove(standardJsonFormatter);
 
-			json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+			var customJsonFormatter = new WrappedJsonFormatter();
+			GlobalConfiguration.Configuration.Formatters.Add(customJsonFormatter);
 		}
 	}
 }

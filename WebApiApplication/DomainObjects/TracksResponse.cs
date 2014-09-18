@@ -1,21 +1,28 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace WebApiApplication.DomainObjects
 {
 	[XmlRoot("tracks")]
-	public class TracksResponse
+	public class TracksResponse : PagedCollectionBase
+	{
+		[XmlElement("track")]
+		public Track[] Tracks { get; set; }
+	}
+
+	public class PagedCollectionBase
 	{
 		[XmlElement("page")]
+		[JsonProperty(Order = -4)]
 		public int Page { get; set; }
 
 		[XmlElement("pageSize")]
+		[JsonProperty(Order = -3)]
 		public int PageSize { get; set; }
 
 		[XmlElement("totalItems")]
+		[JsonProperty(Order = -2)]
 		public int TotalItems { get; set; }
-
-		[XmlElement("track")]
-		public Track[] Tracks { get; set; }
 	}
 }

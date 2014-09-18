@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Text;
@@ -9,9 +10,9 @@ using System.Xml.Serialization;
 
 namespace WebApiApplication
 {
-	public class WrappedResponseXmlFormatter : BufferedMediaTypeFormatter
+	public class WrappedXmlFormatter : BufferedMediaTypeFormatter
 	{
-		public WrappedResponseXmlFormatter()
+		public WrappedXmlFormatter()
 		{
 			SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/xml"));
 			SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/xml"));
@@ -27,7 +28,7 @@ namespace WebApiApplication
 			return true;
 		}
 
-		public override void WriteToStream(Type type, object value, Stream writeStream, System.Net.Http.HttpContent content)
+		public override void WriteToStream(Type type, object value, Stream writeStream, HttpContent content)
 		{
 			var valueXDoc = SerializeToXDoc(type, value);
 

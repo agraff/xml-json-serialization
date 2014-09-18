@@ -4,10 +4,10 @@ using Newtonsoft.Json;
 namespace ViewModels
 {
 	[XmlRoot("tracks")]
-	public class TracksResponse : PagedCollectionBase
+	public class TracksViewModel : PagedCollectionBase
 	{
 		[XmlElement("track")]
-		public Track[] Tracks { get; set; }
+		public TrackViewModel[] Tracks { get; set; }
 	}
 
 	public class PagedCollectionBase

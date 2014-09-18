@@ -6,7 +6,7 @@ namespace ViewModels
 {
 	[XmlRoot("track")]
 	[DataContract(Namespace = "track")]
-	public class Track
+	public class TrackViewModel
 	{
 		[XmlElement("title")]
 		[DataMember]

@@ -49,8 +49,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestData.cs" />
-    <Compile Include="Track.cs" />
-    <Compile Include="TracksResponse.cs" />
+    <Compile Include="TrackViewModel.cs" />
+    <Compile Include="TracksViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

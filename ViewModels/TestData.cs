@@ -4,9 +4,9 @@ namespace ViewModels
 {
 	public static class TestData
 	{
-		public static TracksResponse GetTracksPage()
+		public static TracksViewModel GetTracksViewModel()
 		{
-			return new TracksResponse
+			return new TracksViewModel
 			{
 				Page = 2,
 				PageSize = 3,
@@ -15,23 +15,23 @@ namespace ViewModels
 			};
 		}
 
-		private static Track[] GetTracks()
+		private static TrackViewModel[] GetTracks()
 		{
 			return new[]
 			{
-				new Track
+				new TrackViewModel
 				{
 					Title = "First Track",
 					Number = 1,
 					ReleaseDateTime = new DateTime(1998, 03, 21, 09, 30, 00, DateTimeKind.Utc)
 				},
-				new Track
+				new TrackViewModel
 				{
 					Title = "Another Track",
 					Number = 5,
 					ReleaseDateTime = new DateTime(2009, 12, 07, 11, 45, 23, DateTimeKind.Utc)
 				},
-				new Track
+				new TrackViewModel
 				{
 					Title = "Final Track",
 					Number = 13,

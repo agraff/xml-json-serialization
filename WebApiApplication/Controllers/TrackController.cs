@@ -6,9 +6,9 @@ namespace WebApiApplication.Controllers
 {
 	public class TrackController : ApiController
 	{
-		public Track Get()
+		public TrackViewModel Get()
 		{
-			return new Track
+			return new TrackViewModel
 				{
 					ReleaseDateTime = new DateTime(1998, 03, 21, 09, 30, 00, DateTimeKind.Utc),
 					Number = 1,

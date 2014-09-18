@@ -37,7 +37,9 @@ namespace WebApiApplication.App_Start
 			}
 			else
 			{
-				WrapAndSerializeValue(type, value, writeStream);	
+				var propertyName = type.Name;
+				propertyName = propertyName.Replace("ViewModel", "");
+				WrapAndSerializeValue(propertyName, value, writeStream);
 			}
 		}
 
@@ -49,14 +51,13 @@ namespace WebApiApplication.App_Start
 				var serializer = new JsonSerializer();
 				serializer.ContractResolver = new CamelCasePropertyNamesContractResolver();
 				serializer.Serialize(writer, value);
-
 			}
 		}
 
-		private static void WrapAndSerializeValue(Type type, object value, Stream writeStream)
+		private static void WrapAndSerializeValue(string propertyName, object value, Stream writeStream)
 		{
 			var response = new ExpandoObject() as IDictionary<string, Object>;
-			response.Add(type.Name, value);
+			response.Add(propertyName, value);
 			SerializeValue(writeStream, response);
 		}
 	}

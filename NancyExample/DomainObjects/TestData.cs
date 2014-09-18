@@ -8,21 +8,21 @@ namespace NancyExample.DomainObjects
 	{
 		public TracksResponse GetTracksResponse()
 		{
-			var track1 = new Track
+			var track1 = new TrackViewModel
 				{
 					Title = "First Track",
 					Number = 1,
 					ReleaseDateTime = new DateTime(1998, 03, 21, 09, 30, 00, DateTimeKind.Utc)
 				};
 
-			var track2 = new Track
+			var track2 = new TrackViewModel
 				{
 					Title = "Another Track",
 					Number = 5,
 					ReleaseDateTime = new DateTime(2009, 12, 07, 11, 45, 23, DateTimeKind.Utc)
 				};
 
-			var track3 = new Track
+			var track3 = new TrackViewModel
 				{
 					Title = "Final Track",
 					Number = 13,
@@ -36,7 +36,7 @@ namespace NancyExample.DomainObjects
 							Page = 2,
 							PageSize = 3,
 							TotalItems = 1423,
-							Tracks = new List<Track> { track1, track2, track3 }
+							Tracks = new List<TrackViewModel> { track1, track2, track3 }
 						}
 				};
 		}

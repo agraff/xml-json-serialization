@@ -7,6 +7,6 @@ namespace NancyExample.DomainObjects
 	public class SingleTrackResponse : Response
 	{
 		[XmlElement("track")]
-		public Track Track { get; set; }
+		public TrackViewModel Track { get; set; }
 	}
 }

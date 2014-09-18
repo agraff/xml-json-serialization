@@ -5,9 +5,9 @@ namespace WebApiApplication.Controllers
 {
 	public class TracksController : ApiController
 	{
-		public TracksResponse Get()
+		public TracksViewModel Get()
 		{
-			return TestData.GetTracksPage();
+			return TestData.GetTracksViewModel();
 		}
 	}
 }

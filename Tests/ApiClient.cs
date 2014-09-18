@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using RestSharp;
 
-namespace Test.Common
+namespace Tests
 {
 	public class ApiClient
 	{

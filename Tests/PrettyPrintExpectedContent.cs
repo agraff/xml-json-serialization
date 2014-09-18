@@ -3,8 +3,9 @@ using System.IO;
 using System.Xml.Linq;
 using NUnit.Framework;
 using Newtonsoft.Json;
+using Tests.Properties;
 
-namespace Test.Common
+namespace Tests
 {
 	[TestFixture]
 	[Explicit]
@@ -13,7 +14,7 @@ namespace Test.Common
 		[Test]
 		public void PrettyPrintXml()
 		{
-			var xml = Test.Common.Properties.Resources.ExpectedXml;
+			var xml = Resources.ExpectedXml;
 			
 			var xDocument = XDocument.Parse(xml);
 			var formattedXml = xDocument.Declaration + Environment.NewLine + xDocument;
@@ -24,7 +25,7 @@ namespace Test.Common
 		[Test]
 		public void PrettyPrintJson()
 		{
-			var json = Test.Common.Properties.Resources.ExpectedJson;
+			var json = Resources.ExpectedJson;
 			var formattedJson = JsonConvert.DeserializeObject<dynamic>(json).ToString();
 
 			Print(formattedJson, "Expected.json");

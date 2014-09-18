@@ -1,10 +1,9 @@
 ﻿using NUnit.Framework;
-using Test.Common;
 
-namespace Test.Common
+namespace Tests
 {
 	[TestFixture]
-	public class WebApiJsonTests : JsonTestsBase
+	public class WebApiXmlTests : XmlTestsBase
 	{
 		protected override string ApiUrl
 		{

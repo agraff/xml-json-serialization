@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using Newtonsoft.Json;
 
-namespace Test.Common
+namespace Tests
 {
 	public abstract class JsonTestsBase
 	{

@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Test.Common
+namespace Tests
 {
 	[TestFixture]
 	public class NancyXmlTests : XmlTestsBase

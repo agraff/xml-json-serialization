@@ -13,7 +13,7 @@ namespace NancyExample
 
 		public ReturnsSingleEntityModule()
 		{
-			Get["/singleTrack"] = parameters =>
+			Get["/track"] = parameters =>
 			{
 				var request = this.Bind<SingleTrackRequest>();
 

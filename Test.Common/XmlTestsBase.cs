@@ -39,7 +39,7 @@ namespace Test.Common
 		[Test]
 		public void Content_Matches_Expected_Xml()
 		{
-			var expectedContent = Test.Common.Properties.Resources.ExpectedXml;
+			var expectedContent = Properties.Resources.ExpectedXml;
 
 			var content = GetXmlResponse("tracks");
 
@@ -49,7 +49,7 @@ namespace Test.Common
 		[Test]
 		public void Single_Content_Is_Not_Empty()
 		{
-			var content = GetXmlResponse("SingleTrack");
+			var content = GetXmlResponse("track");
 			Assert.IsNotNullOrEmpty(content);
 		}
 
@@ -57,7 +57,7 @@ namespace Test.Common
 		[Test]
 		public void Single_Content_Is_Valid_Xml()
 		{
-			var content = GetXmlResponse("SingleTrack");
+			var content = GetXmlResponse("track");
 
 			var deserializedObject = XDocument.Parse(content);
 			Assert.That(deserializedObject, Is.Not.Null, "The deserialized object was null.");
@@ -68,9 +68,9 @@ namespace Test.Common
 		[Test]
 		public void Single_Content_returned_matches_expected_xml()
 		{
-			var content = GetXmlResponse("SingleTrack");
+			var content = GetXmlResponse("track");
 
-			var expectedSingleXml = Test.Common.Properties.Resources.ExpectedSingleEntityXml;
+			var expectedSingleXml = Properties.Resources.ExpectedSingleEntityXml;
 
 			Assert.That(content, Is.EqualTo(expectedSingleXml));
 		}

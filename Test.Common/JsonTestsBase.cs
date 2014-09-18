@@ -48,7 +48,7 @@ namespace Test.Common
 		[Test]
 		public void Single_Content_Is_Not_Empty()
 		{
-			var content = GetJsonResponse("singleTrack");
+			var content = GetJsonResponse("track");
 
 			Assert.IsNotNullOrEmpty(content);
 		}
@@ -56,7 +56,7 @@ namespace Test.Common
 		[Test]
 		public void Single_Content_Is_Valid_Json()
 		{
-			var content = GetJsonResponse("singleTrack");
+			var content = GetJsonResponse("track");
 			var deserializedObject = JsonConvert.DeserializeObject<dynamic>(content);
 
 			Assert.That(deserializedObject, Is.Not.Null, "The deserialized object was null.");
@@ -67,7 +67,7 @@ namespace Test.Common
 		{
 			var expectedSingleJson = Properties.Resources.ExpectedSingleEntityJson;
 
-			var content = GetJsonResponse("singleTrack");
+			var content = GetJsonResponse("track");
 
 			Assert.That(content, Is.EqualTo(expectedSingleJson));
 		}

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace NancyExample.DomainObjects
 {
-	public class SingleTrackRequest
+	public class TrackRequest
 	{
 		public bool RequestData { get; set; }
 	}

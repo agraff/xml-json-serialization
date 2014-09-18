@@ -16,13 +16,13 @@ namespace NancyExample
 		{
 			Get["/track"] = parameters =>
 			{
-				var request = this.Bind<SingleTrackRequest>();
+				var request = this.Bind<TrackRequest>();
 
 				return _Get(request);
 			};
 		}
 
-		public SingleTrackResponse _Get(SingleTrackRequest request)
+		public SingleTrackResponse _Get(TrackRequest request)
 		{
 			return new SingleTrackResponse
 				{

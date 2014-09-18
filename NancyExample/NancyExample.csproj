@@ -74,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="DomainObjects\SingleTrackRequest.cs" />
+    <Compile Include="DomainObjects\TrackRequest.cs" />
     <Compile Include="DomainObjects\SingleTrackResponse.cs" />
     <Compile Include="ReturnsSingleEntityModule.cs" />
     <Compile Include="ExampleJsonSerializer.cs" />

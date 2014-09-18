@@ -46,10 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiClient.cs" />
-    <Compile Include="Json\NancyJsonTests.cs" />
-    <Compile Include="Xml\NancyXmlTests.cs" />
-    <Compile Include="Json\WebApiJsonTests.cs" />
-    <Compile Include="Xml\WebApiXmlTests.cs" />
     <Compile Include="Xml\XmlTestsBase.cs" />
     <Compile Include="Json\JsonTestsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

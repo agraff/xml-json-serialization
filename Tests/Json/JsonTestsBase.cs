@@ -4,6 +4,24 @@ using NUnit.Framework;
 
 namespace Tests.Json
 {
+	[TestFixture]
+	class NancyJsonTests : JsonTestsBase
+	{
+		protected override string ApiUrl
+		{
+			get { return "http://localhost/api-examples/nancy"; }
+		}
+	}
+
+	[TestFixture]
+	public class WebApiJsonTests : JsonTestsBase
+	{
+		protected override string ApiUrl
+		{
+			get { return "http://localhost/api-examples/webapi/api"; }
+		}
+	}
+
 	public abstract class JsonTestsBase
 	{
 		protected abstract string ApiUrl { get; }

@@ -45,11 +45,11 @@ namespace Tests.Json
 		[Test]
 		public void Content_Matches_Expected_Json()
 		{
-			var expectedContent = Properties.Resources.TracksJson;
+			var expectedTracksJson = Properties.Resources.TracksJson;
 
 			var content = GetJsonResponse("tracks");
 
-			Assert.That(content, Is.EqualTo(expectedContent));
+			Assert.That(content, Is.EqualTo(expectedTracksJson));
 		}
 
 		[Test]
@@ -72,11 +72,11 @@ namespace Tests.Json
 		[Test]
 		public void Single_Content_matches_expected_Json()
 		{
-			var expectedSingleJson = Properties.Resources.TrackJson;
+			var expectedTrackJson = Properties.Resources.TrackJson;
 
 			var content = GetJsonResponse("track");
 
-			Assert.That(content, Is.EqualTo(expectedSingleJson));
+			Assert.That(content, Is.EqualTo(expectedTrackJson));
 		}
 	}
 }

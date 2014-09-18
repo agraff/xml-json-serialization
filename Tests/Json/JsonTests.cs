@@ -4,31 +4,20 @@ using NUnit.Framework;
 
 namespace Tests.Json
 {
-	[TestFixture]
-	class NancyJsonTests : JsonTestsBase
+	[TestFixture("Nancy", "http://localhost/api-examples/nancy")]
+	[TestFixture("WebApi", "http://localhost/api-examples/webapi/api")]
+	public class JsonTests
 	{
-		protected override string ApiUrl
-		{
-			get { return "http://localhost/api-examples/nancy"; }
-		}
-	}
+		private readonly string _apiUrl;
 
-	[TestFixture]
-	public class WebApiJsonTests : JsonTestsBase
-	{
-		protected override string ApiUrl
+		public JsonTests(string apiType, string apiUrl)
 		{
-			get { return "http://localhost/api-examples/webapi/api"; }
+			_apiUrl = apiUrl;
 		}
-	}
-
-	public abstract class JsonTestsBase
-	{
-		protected abstract string ApiUrl { get; }
 
 		private string GetJsonResponse(string endpoint)
 		{
-			var client = new ApiClient(ApiUrl);
+			var client = new ApiClient(_apiUrl);
 			var content = client.GetJson(endpoint);
 			Console.WriteLine("--- Begin Content ---");
 			Console.WriteLine(content ?? "NULL");

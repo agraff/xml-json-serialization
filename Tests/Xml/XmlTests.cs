@@ -4,31 +4,20 @@ using NUnit.Framework;
 
 namespace Tests.Xml
 {
-	[TestFixture]
-	public class NancyXmlTests : XmlTestsBase
+	[TestFixture("Nancy", "http://localhost/api-examples/nancy")]
+	[TestFixture("WebApi", "http://localhost/api-examples/webapi/api")]
+	public class JsonTests
 	{
-		protected override string ApiUrl
-		{
-			get { return "http://localhost/api-examples/nancy"; }
-		}
-	}
+		private readonly string _apiUrl;
 
-	[TestFixture]
-	public class WebApiXmlTests : XmlTestsBase
-	{
-		protected override string ApiUrl
+		public JsonTests(string apiType, string apiUrl)
 		{
-			get { return "http://localhost/api-examples/webapi/api"; }
+			_apiUrl = apiUrl;
 		}
-	}
-
-	public abstract class XmlTestsBase
-	{
-		protected abstract string ApiUrl { get; }
 
 		private string GetXmlResponse(string endpoint)
 		{
-			var client = new ApiClient(ApiUrl);
+			var client = new ApiClient(_apiUrl);
 			var content = client.GetXml(endpoint);
 			Console.WriteLine("--- Begin Content ---");
 			Console.WriteLine(content ?? "NULL");
@@ -40,6 +29,7 @@ namespace Tests.Xml
 		public void Content_Is_Not_Empty()
 		{
 			var content = GetXmlResponse("tracks");
+
 			Assert.IsNotNullOrEmpty(content);
 		}
 
@@ -68,7 +58,6 @@ namespace Tests.Xml
 			var content = GetXmlResponse("track");
 			Assert.IsNotNullOrEmpty(content);
 		}
-
 
 		[Test]
 		public void Single_Content_Is_Valid_Xml()

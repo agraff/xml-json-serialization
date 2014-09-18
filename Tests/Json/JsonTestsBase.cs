@@ -1,8 +1,8 @@
 ﻿using System;
-using NUnit.Framework;
 using Newtonsoft.Json;
+using NUnit.Framework;
 
-namespace Tests
+namespace Tests.Json
 {
 	public abstract class JsonTestsBase
 	{

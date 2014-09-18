@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Tests
+namespace Tests.Json
 {
 	[TestFixture]
 	class NancyJsonTests : JsonTestsBase

@@ -2,7 +2,7 @@
 using System.Xml.Linq;
 using NUnit.Framework;
 
-namespace Tests
+namespace Tests.Xml
 {
 	public abstract class XmlTestsBase
 	{

@@ -3,7 +3,7 @@ using Nancy.ModelBinding;
 using NancyExample.DomainObjects;
 using ViewModels;
 
-namespace NancyExample
+namespace NancyExample.Modules
 {
 	public class ReturnsACollectionModule : NancyModule
 	{

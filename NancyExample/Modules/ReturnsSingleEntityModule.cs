@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Nancy;
 using Nancy.ModelBinding;
 using NancyExample.DomainObjects;
 using ViewModels;
 
-namespace NancyExample
+namespace NancyExample.Modules
 {
 	public class ReturnsSingleEntityModule : NancyModule
 	{

@@ -1,5 +1,4 @@
 ﻿using System.Xml.Serialization;
-using Nancy.Json;
 using Newtonsoft.Json;
 
 namespace NancyExample.DomainObjects

@@ -5,10 +5,11 @@ using System.Web;
 using Nancy;
 using Nancy.ModelBinding;
 using NancyExample.DomainObjects;
+using ViewModels;
 
 namespace NancyExample
 {
-	public class ReturnsSingleEntityModule :NancyModule
+	public class ReturnsSingleEntityModule : NancyModule
 	{
 
 		public ReturnsSingleEntityModule()

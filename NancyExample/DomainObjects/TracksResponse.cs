@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using ViewModels;
 
 namespace NancyExample.DomainObjects
 {

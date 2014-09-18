@@ -78,7 +78,6 @@
     <Compile Include="ExampleXmlSerializer.cs" />
     <Compile Include="DomainObjects\Response.cs" />
     <Compile Include="DomainObjects\TestData.cs" />
-    <Compile Include="DomainObjects\Track.cs" />
     <Compile Include="DomainObjects\TracksRequest.cs" />
     <Compile Include="DomainObjects\TracksResponse.cs" />
     <Compile Include="ReturnsACollectionModule.cs" />
@@ -93,6 +92,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ViewModels\ViewModels.csproj">
+      <Project>{960ab2d4-400d-4121-a611-c28482d3258a}</Project>
+      <Name>ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

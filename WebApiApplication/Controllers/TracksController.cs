@@ -1,7 +1,5 @@
-﻿using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using WebApiApplication.DomainObjects;
+﻿using System.Web.Http;
+using ViewModels;
 
 namespace WebApiApplication.Controllers
 {

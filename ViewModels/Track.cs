@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-namespace WebApiApplication.DomainObjects
+namespace ViewModels
 {
 	[XmlRoot("track")]
 	[DataContract(Namespace = "track")]

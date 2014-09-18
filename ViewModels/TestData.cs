@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WebApiApplication.DomainObjects
+namespace ViewModels
 {
 	public static class TestData
 	{

@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
-using WebApiApplication.DomainObjects;
+using ViewModels;
 
 namespace WebApiApplication.Controllers
 {
-	public class SingleTrackController : ApiController
+	public class TrackController : ApiController
 	{
 		public Track Get()
 		{

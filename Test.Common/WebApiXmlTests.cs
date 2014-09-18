@@ -7,7 +7,7 @@ namespace Test.Common
 	{
 		protected override string ApiUrl
 		{
-			get { return "http://localhost:57007/api"; }
+			get { return "http://localhost/api-examples/webapi/api"; }
 		}
 	}
 }

@@ -1,5 +1,4 @@
 ﻿using Nancy;
-using Nancy.ModelBinding;
 using NancyExample.DomainObjects;
 using ViewModels;
 
@@ -10,17 +9,12 @@ namespace NancyExample.Modules
 
 		public TracksModule()
 		{
-			Get["/tracks"] = parameters =>
-			{
-				var request = this.Bind<TracksRequest>();
-
-				return _Get(request);
-			};
+			Get["/tracks"] = parameters => _Get();
 		}
 
-		public TracksResponse _Get(TracksRequest request)
+		public WrappedTracksViewModel _Get()
 		{
-			return new TracksResponse()
+			return new WrappedTracksViewModel
 			{
 				Tracks = TestData.GetTracksViewModel()
 			};

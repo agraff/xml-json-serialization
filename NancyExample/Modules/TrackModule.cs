@@ -8,20 +8,14 @@ namespace NancyExample.Modules
 {
 	public class TrackModule : NancyModule
 	{
-
 		public TrackModule()
 		{
-			Get["/track"] = parameters =>
-			{
-				var request = this.Bind<TrackRequest>();
-
-				return _Get(request);
-			};
+			Get["/track"] = parameters => _Get();
 		}
 
-		public SingleTrackResponse _Get(TrackRequest request)
+		public WrappedTrackViewModel _Get()
 		{
-			return new SingleTrackResponse
+			return new WrappedTrackViewModel
 				{
 					Track = new TrackViewModel
 					{

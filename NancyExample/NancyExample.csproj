@@ -74,14 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="DomainObjects\TrackRequest.cs" />
-    <Compile Include="DomainObjects\SingleTrackResponse.cs" />
+    <Compile Include="DomainObjects\WrappedTrackViewModel.cs" />
     <Compile Include="Modules\TrackModule.cs" />
     <Compile Include="Serializers\ExampleJsonSerializer.cs" />
     <Compile Include="Serializers\ExampleXmlSerializer.cs" />
-    <Compile Include="DomainObjects\Response.cs" />
-    <Compile Include="DomainObjects\TracksRequest.cs" />
-    <Compile Include="DomainObjects\TracksResponse.cs" />
+    <Compile Include="DomainObjects\ResponseViewModel.cs" />
+    <Compile Include="DomainObjects\WrappedTracksViewModel.cs" />
     <Compile Include="Modules\TracksModule.cs" />
     <Compile Include="Serializers\ExampleJsonProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

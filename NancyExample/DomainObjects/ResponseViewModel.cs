@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace NancyExample.DomainObjects
 {
-	public class Response
+	public class ResponseViewModel
 	{
 		[XmlAttribute("status")]
 		[JsonIgnore]

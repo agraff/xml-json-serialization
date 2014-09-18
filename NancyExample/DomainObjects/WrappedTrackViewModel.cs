@@ -4,7 +4,7 @@ using ViewModels;
 namespace NancyExample.DomainObjects
 {
 	[XmlRoot("response")]
-	public class SingleTrackResponse : Response
+	public class WrappedTrackViewModel : ResponseViewModel
 	{
 		[XmlElement("track")]
 		public TrackViewModel Track { get; set; }

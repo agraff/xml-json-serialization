@@ -8,7 +8,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace WebApiApplication.Formatters
+namespace SevenDigital.Serialization.Wrapped.WebApi.Formatters
 {
 	public class WrappedXmlFormatter : BufferedMediaTypeFormatter
 	{

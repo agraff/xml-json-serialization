@@ -8,9 +8,8 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
-using ViewModels;
 
-namespace WebApiApplication.Formatters
+namespace SevenDigital.Serialization.Wrapped.WebApi.Formatters
 {
 	public class WrappedJsonFormatter : BufferedMediaTypeFormatter
 	{

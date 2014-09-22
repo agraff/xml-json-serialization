@@ -1,5 +1,5 @@
 ﻿using System.Xml.Serialization;
-using Newtonsoft.Json;
+using SevenDigital.Serialization.Wrapped.WebApi;
 
 namespace ViewModels
 {
@@ -8,20 +8,5 @@ namespace ViewModels
 	{
 		[XmlElement("track")]
 		public TrackViewModel[] Tracks { get; set; }
-	}
-
-	public class PagedCollectionBase
-	{
-		[XmlElement("page")]
-		[JsonProperty(Order = -4)]
-		public int Page { get; set; }
-
-		[XmlElement("pageSize")]
-		[JsonProperty(Order = -3)]
-		public int PageSize { get; set; }
-
-		[XmlElement("totalItems")]
-		[JsonProperty(Order = -2)]
-		public int TotalItems { get; set; }
 	}
 }

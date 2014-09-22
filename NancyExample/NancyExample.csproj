@@ -91,6 +91,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SevenDigital.Serialization.Wrapped.WebApi\SevenDigital.Serialization.Wrapped.WebApi.csproj">
+      <Project>{f28e7a75-9de1-4ec3-89f7-943fe7485b7c}</Project>
+      <Name>SevenDigital.Serialization.Wrapped.WebApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModels\ViewModels.csproj">
       <Project>{960ab2d4-400d-4121-a611-c28482d3258a}</Project>
       <Name>ViewModels</Name>

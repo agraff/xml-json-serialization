@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Formatting;
 using System.Web.Http;
-using WebApiApplication.Formatters;
+using SevenDigital.Serialization.Wrapped.WebApi.Formatters;
 
 namespace WebApiApplication
 {

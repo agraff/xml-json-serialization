@@ -1,6 +1,5 @@
-﻿using System.Net.Http.Formatting;
-using System.Web.Http;
-using SevenDigital.Serialization.Wrapped.WebApi.Formatters;
+﻿using System.Web.Http;
+using SevenDigital.Serialization.Wrapped.WebApi;
 
 namespace WebApiApplication
 {
@@ -20,33 +19,7 @@ namespace WebApiApplication
 				defaults: new { id = RouteParameter.Optional }
 			);
 
-			SetupXmlSerialiser();
-			SetupJsonSerialiser();
-			SetupContentNegotiator();
-		}
-
-		private static void SetupContentNegotiator()
-		{
-			// This will cause a 406 to be returned (rather than using any serialiser), when no serialiser found that matches the response's Accept type.
-			GlobalConfiguration.Configuration.Services.Replace(typeof (IContentNegotiator), new DefaultContentNegotiator(true));
-		}
-
-		private static void SetupXmlSerialiser()
-		{
-			var standardXmlFormatter = GlobalConfiguration.Configuration.Formatters.XmlFormatter;
-			GlobalConfiguration.Configuration.Formatters.Remove(standardXmlFormatter);
-			
-			var customXmlFormatter = new WrappedXmlFormatter();
-			GlobalConfiguration.Configuration.Formatters.Add(customXmlFormatter);
-		}
-
-		private static void SetupJsonSerialiser()
-		{
-			var standardJsonFormatter = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
-			GlobalConfiguration.Configuration.Formatters.Remove(standardJsonFormatter);
-
-			var customJsonFormatter = new WrappedJsonFormatter();
-			GlobalConfiguration.Configuration.Formatters.Add(customJsonFormatter);
+			new WrappedSerializersConfigurator(GlobalConfiguration.Configuration).Setup();
 		}
 	}
 }

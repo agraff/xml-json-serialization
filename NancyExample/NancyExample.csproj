@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Modules\InfoModule.cs" />
+    <Compile Include="Serializers\JsonRootObject.cs" />
     <Compile Include="ViewModels\WrappedInfoViewModel.cs" />
     <Compile Include="ViewModels\WrappedTrackViewModel.cs" />
     <Compile Include="Modules\TrackModule.cs" />

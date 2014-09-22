@@ -1,5 +1,5 @@
-﻿using System.Runtime.Serialization;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
+using NancyExample.Serializers;
 using ViewModels;
 
 namespace NancyExample.ViewModels
@@ -7,8 +7,8 @@ namespace NancyExample.ViewModels
 	[XmlRoot("response")]
 	public class WrappedTracksViewModel : ResponseViewModel
 	{
-		[DataMember]
 		[XmlElement("tracks")]
+		[JsonRootObject]
 		public TracksViewModel Tracks { get; set; }
 	}
 }

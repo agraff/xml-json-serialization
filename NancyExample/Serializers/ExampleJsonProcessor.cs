@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
+using System.Reflection;
 using Nancy;
 using Nancy.Responses;
 using Nancy.Responses.Negotiation;
@@ -79,19 +79,21 @@ namespace NancyExample.Serializers
 		public Response Process(MediaRange requestedMediaRange, dynamic model, NancyContext context)
 		{	
 			Type modelType = model.GetType();
-			var modelToSerialize = (object) model;
+			var modelToSerialize = (object)model;
 			var properties = modelType.GetProperties().ToList();
-			foreach (var property in properties)
+			var jsonRootProperty = properties.FirstOrDefault(HasJsonRootObjectAttribute);
+			if (jsonRootProperty != null)
 			{
-				var attributes = property.GetCustomAttributes(true);
-				if (attributes.OfType<DataMemberAttribute>().Any())
-				{
-					var m = (dynamic)property.GetGetMethod().Invoke(modelToSerialize, new object[0]);
-					return new JsonResponse<dynamic>(m, _serializer);
-				}
+				var m = (dynamic)jsonRootProperty.GetGetMethod().Invoke(modelToSerialize, new object[0]);
+				return new JsonResponse<dynamic>(m, _serializer);
 			}
-			
 			return new JsonResponse(model, _serializer);
+		}
+
+		private bool HasJsonRootObjectAttribute(PropertyInfo property)
+		{
+			var attributes = property.GetCustomAttributes(true);
+			return attributes.OfType<JsonRootObject>().Any();
 		}
 
 		private static bool IsExactJsonContentType(MediaRange requestedContentType)

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenDigital.Serialization.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenDigital.Serialization.Unwrapped.Nancy", "SevenDigital.Serialization.Unwrapped.Nancy\SevenDigital.Serialization.Unwrapped.Nancy.csproj", "{E3B182AE-904A-4B1A-8B41-7D9C7F02FB53}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SevenDigital.Serialization", "SevenDigital.Serialization", "{7EEBA0E8-EE59-48A7-9D5D-557CF1F07723}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F28E7A75-9DE1-4EC3-89F7-943FE7485B7C} = {7EEBA0E8-EE59-48A7-9D5D-557CF1F07723}
+		{E3B182AE-904A-4B1A-8B41-7D9C7F02FB53} = {7EEBA0E8-EE59-48A7-9D5D-557CF1F07723}
 	EndGlobalSection
 EndGlobal

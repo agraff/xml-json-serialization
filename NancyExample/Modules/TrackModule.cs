@@ -16,12 +16,7 @@ namespace NancyExample.Modules
 		{
 			return new WrappedTrackViewModel
 				{
-					Track = new TrackViewModel
-					{
-						ReleaseDateTime = new DateTime(1998, 03, 21, 09, 30, 00, DateTimeKind.Utc),
-						Number = 1,
-						Title = "Hello"
-					}
+					Track = TestData.GetTrack()
 				};
 		}
 	}

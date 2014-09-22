@@ -7,7 +7,7 @@ namespace WebApiApplication.Controllers
 	{
 		public TracksViewModel Get()
 		{
-			return TestData.GetTracksViewModel();
+			return TestData.GetPaginatedTracks();
 		}
 	}
 }

@@ -52,6 +52,7 @@
     <Compile Include="TestData.cs" />
     <Compile Include="TrackViewModel.cs" />
     <Compile Include="TracksViewModel.cs" />
+    <Compile Include="TypeEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

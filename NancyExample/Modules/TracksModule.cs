@@ -15,7 +15,7 @@ namespace NancyExample.Modules
 		{
 			return new WrappedTracksViewModel
 			{
-				Tracks = TestData.GetTracksViewModel()
+				Tracks = TestData.GetPaginatedTracks()
 			};
 		}
 	}

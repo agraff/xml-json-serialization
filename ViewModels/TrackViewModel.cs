@@ -19,5 +19,9 @@ namespace ViewModels
 		[XmlElement("releaseDateTime")]
 		[DataMember]
 		public DateTime ReleaseDateTime { get; set; }
+
+		[XmlElement("type")]
+		[DataMember]
+		public TypeEnum Type { get; set; }
 	}
 }

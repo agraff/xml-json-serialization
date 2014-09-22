@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using ViewModels;
 
@@ -50,6 +51,7 @@ namespace WebApiApplication.Formatters
 			{
 				var serializer = new JsonSerializer();
 				serializer.ContractResolver = new CamelCasePropertyNamesContractResolver();
+				serializer.Converters.Add(new StringEnumConverter());
 				serializer.Serialize(writer, value);
 			}
 		}

@@ -8,6 +8,7 @@ namespace NancyExample.Serializers
 		public ExampleJsonSerializer()
 		{
 			ContractResolver = new CamelCasePropertyNamesContractResolver();
+			Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 			Formatting = Formatting.None;
 		}
 	}

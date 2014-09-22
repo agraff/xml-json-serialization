@@ -7,7 +7,6 @@ namespace ViewModels
 	public class InfoViewModel
 	{
 		[XmlElement("technology")]
-		[DataMember]
 		public string Technology { get; set; }
 	}
 }

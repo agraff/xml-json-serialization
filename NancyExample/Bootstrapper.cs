@@ -9,13 +9,13 @@ namespace NancyExample
 	{
 		protected override NancyInternalConfiguration InternalConfiguration
 		{
-			get { return NancyBootstrapper.GetInternalConfiguration(); }
+			get { return UnwrappedSerializersConfiguration.GetInternalConfiguration(); }
 		}
 
 		protected override void ConfigureApplicationContainer(TinyIoCContainer container)
 		{
 			base.ConfigureApplicationContainer(container);
-			NancyBootstrapper.ConfigureApplicationContainer(container);
+			UnwrappedSerializersConfiguration.ConfigureApplicationContainer(container);
 			
 		}
 	}

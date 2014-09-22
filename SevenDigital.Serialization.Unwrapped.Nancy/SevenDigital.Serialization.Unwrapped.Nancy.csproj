@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JsonRootObject.cs" />
-    <Compile Include="NancyBootstrapper.cs" />
+    <Compile Include="UnwrappedSerializersConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serializers\ExampleJsonProcessor.cs" />
     <Compile Include="Serializers\ExampleJsonSerializer.cs" />

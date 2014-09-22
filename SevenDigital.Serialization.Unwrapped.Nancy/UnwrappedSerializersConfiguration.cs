@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace SevenDigital.Serialization.Unwrapped.Nancy
 {
-	public static class NancyBootstrapper
+	public static class UnwrappedSerializersConfiguration
 	{
 		public static NancyInternalConfiguration GetInternalConfiguration()
 		{

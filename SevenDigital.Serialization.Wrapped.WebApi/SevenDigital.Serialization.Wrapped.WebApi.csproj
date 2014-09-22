@@ -55,7 +55,7 @@
     <Compile Include="Formatters\WrappedXmlFormatter.cs" />
     <Compile Include="PagedCollectionBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WrappedSerializersConfigurator.cs" />
+    <Compile Include="WrappedSerializersConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

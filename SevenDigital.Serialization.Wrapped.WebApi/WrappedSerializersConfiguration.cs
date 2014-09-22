@@ -4,11 +4,11 @@ using SevenDigital.Serialization.Wrapped.WebApi.Formatters;
 
 namespace SevenDigital.Serialization.Wrapped.WebApi
 {
-	public class WrappedSerializersConfigurator
+	public class WrappedSerializersConfiguration
 	{
 		private readonly HttpConfiguration _configuration;
 
-		public WrappedSerializersConfigurator(HttpConfiguration configuration)
+		public WrappedSerializersConfiguration(HttpConfiguration configuration)
 		{
 			_configuration = configuration;
 		}

@@ -19,7 +19,7 @@ namespace WebApiApplication
 				defaults: new { id = RouteParameter.Optional }
 			);
 
-			new WrappedSerializersConfigurator(GlobalConfiguration.Configuration).Setup();
+			new WrappedSerializersConfiguration(GlobalConfiguration.Configuration).Setup();
 		}
 	}
 }

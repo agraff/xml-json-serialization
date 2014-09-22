@@ -69,16 +69,12 @@
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Modules\InfoModule.cs" />
-    <Compile Include="Serializers\JsonRootObject.cs" />
     <Compile Include="ViewModels\WrappedInfoViewModel.cs" />
     <Compile Include="ViewModels\WrappedTrackViewModel.cs" />
     <Compile Include="Modules\TrackModule.cs" />
-    <Compile Include="Serializers\ExampleJsonSerializer.cs" />
-    <Compile Include="Serializers\ExampleXmlSerializer.cs" />
     <Compile Include="ViewModels\ResponseViewModel.cs" />
     <Compile Include="ViewModels\WrappedTracksViewModel.cs" />
     <Compile Include="Modules\TracksModule.cs" />
-    <Compile Include="Serializers\ExampleJsonProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +87,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SevenDigital.Serialization.Unwrapped.Nancy\SevenDigital.Serialization.Unwrapped.Nancy.csproj">
+      <Project>{E3B182AE-904A-4B1A-8B41-7D9C7F02FB53}</Project>
+      <Name>SevenDigital.Serialization.Unwrapped.Nancy</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SevenDigital.Serialization.Wrapped.WebApi\SevenDigital.Serialization.Wrapped.WebApi.csproj">
       <Project>{f28e7a75-9de1-4ec3-89f7-943fe7485b7c}</Project>
       <Name>SevenDigital.Serialization.Wrapped.WebApi</Name>

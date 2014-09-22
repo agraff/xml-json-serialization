@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "ViewModels\Vi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenDigital.Serialization.Wrapped.WebApi", "SevenDigital.Serialization.Wrapped.WebApi\SevenDigital.Serialization.Wrapped.WebApi.csproj", "{F28E7A75-9DE1-4EC3-89F7-943FE7485B7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenDigital.Serialization.Unwrapped.Nancy", "SevenDigital.Serialization.Unwrapped.Nancy\SevenDigital.Serialization.Unwrapped.Nancy.csproj", "{E3B182AE-904A-4B1A-8B41-7D9C7F02FB53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F28E7A75-9DE1-4EC3-89F7-943FE7485B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F28E7A75-9DE1-4EC3-89F7-943FE7485B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F28E7A75-9DE1-4EC3-89F7-943FE7485B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3B182AE-904A-4B1A-8B41-7D9C7F02FB53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3B182AE-904A-4B1A-8B41-7D9C7F02FB53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3B182AE-904A-4B1A-8B41-7D9C7F02FB53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3B182AE-904A-4B1A-8B41-7D9C7F02FB53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

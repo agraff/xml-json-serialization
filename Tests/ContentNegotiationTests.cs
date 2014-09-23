@@ -4,7 +4,6 @@ using RestSharp;
 
 namespace Tests
 {
-
 	[TestFixture("Nancy", "http://localhost/api-examples/nancy")]
 	[TestFixture("WebApi", "http://localhost/api-examples/webapi/api")]
 	public class ContentNegotiationTests

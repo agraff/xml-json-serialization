@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using NUnit.Framework;
 
@@ -27,6 +28,11 @@ namespace Tests.Json
 			return content;
 		}
 
+		private static string RemoveJsonWhitespace(string json)
+		{
+			return Regex.Replace(json, "(\"(?:[^\"\\\\]|\\\\.)*\")|\\s+", "$1");
+		}
+
 		[Test]
 		public void Content_Is_Not_Empty()
 		{
@@ -47,7 +53,7 @@ namespace Tests.Json
 		[Test]
 		public void Content_Matches_Expected_Json()
 		{
-			var expectedTracksJson = Properties.Resources.TracksJson;
+			var expectedTracksJson = RemoveJsonWhitespace(Properties.Resources.TracksJson);
 
 			var content = GetJsonResponse("tracks");
 
@@ -74,7 +80,7 @@ namespace Tests.Json
 		[Test]
 		public void Single_Content_matches_expected_Json()
 		{
-			var expectedTrackJson = Properties.Resources.TrackJson;
+			var expectedTrackJson = RemoveJsonWhitespace(Properties.Resources.TrackJson);
 
 			var content = GetJsonResponse("track");
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using NUnit.Framework;
 
@@ -6,12 +7,12 @@ namespace Tests.Xml
 {
 	[TestFixture("Nancy", "http://localhost/api-examples/nancy")]
 	[TestFixture("WebApi", "http://localhost/api-examples/webapi/api")]
-	public class JsonTests
+	public class XmlTests
 	{
 		private readonly string _apiType;
 		private readonly string _apiUrl;
 
-		public JsonTests(string apiType, string apiUrl)
+		public XmlTests(string apiType, string apiUrl)
 		{
 			_apiType = apiType;
 			_apiUrl = apiUrl;
@@ -25,6 +26,11 @@ namespace Tests.Xml
 			Console.WriteLine(content ?? "NULL");
 			Console.WriteLine("---- End Content ----");
 			return content;
+		}
+
+		private static string RemoveXmlWhitespace(string xml)
+		{
+			return Regex.Replace(xml, @">\s*<", "><");
 		}
 
 		[Test]
@@ -47,7 +53,7 @@ namespace Tests.Xml
 		[Test]
 		public void Content_Matches_Expected_Xml()
 		{
-			var expectedTracksXml = Properties.Resources.TracksXml;
+			var expectedTracksXml = RemoveXmlWhitespace(Properties.Resources.TracksXml);
 
 			var content = GetXmlResponse("tracks");
 
@@ -74,7 +80,7 @@ namespace Tests.Xml
 		[Test]
 		public void Single_Content_returned_matches_expected_xml()
 		{
-			var expectedTrackXml = Properties.Resources.TrackXml;
+			var expectedTrackXml = RemoveXmlWhitespace(Properties.Resources.TrackXml);
 
 			var content = GetXmlResponse("track");
 

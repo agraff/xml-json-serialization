@@ -130,4 +130,10 @@
   <data name="TracksXml" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Xml\tracks.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="TrackDetailsJson" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Json\TrackDetails.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="TrackDetailsXml" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Xml\TrackDetailsXml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

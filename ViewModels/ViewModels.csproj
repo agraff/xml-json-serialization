@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artist.cs" />
     <Compile Include="InfoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestData.cs" />
+    <Compile Include="TrackDetailsViewModel.cs" />
+    <Compile Include="TrackType.cs" />
     <Compile Include="TrackViewModel.cs" />
     <Compile Include="TracksViewModel.cs" />
     <Compile Include="TypeEnum.cs" />

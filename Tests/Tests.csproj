@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="ApiClient.cs" />
     <Compile Include="ContentNegotiationTests.cs" />
+    <Compile Include="Json\DifferingResponseJsonTests.cs" />
+    <Compile Include="Xml\DifferingResponseXmlTests.cs" />
     <Compile Include="Xml\XmlTests.cs" />
     <Compile Include="Json\JsonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +66,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Json\TrackDetails.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Xml\Track.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TrackDetails.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Xml\TrackDetailsXml.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

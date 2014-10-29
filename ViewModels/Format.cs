@@ -4,24 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using Nancy.Json;
-using Newtonsoft.Json;
 
 namespace ViewModels
 {
-	public class Artist
+	public class Format
 	{
 		[XmlAttribute(AttributeName = "id")]
 		public int Id { get; set; }
 
-		[XmlElement("name")]
-		public string Name { get; set; }
+		[XmlElement("fileFormat")]
+		public string FileFormat { get; set; }
 
-		[XmlElement("appearsAs")]
-		public string AppearsAs { get; set; }
+		[XmlElement("bitRate")]
+		public int BitRate { get; set; }
 
-		[XmlElement("url")]
-		[JsonIgnore]
-		public string Url { get; set; }
+		[XmlElement("drmFree")]
+		public bool DrmFree { get; set; }
+
 	}
 }

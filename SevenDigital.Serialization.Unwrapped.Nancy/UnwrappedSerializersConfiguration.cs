@@ -1,4 +1,5 @@
 ﻿using Nancy.Bootstrapper;
+using Nancy.Responses;
 using Nancy.Responses.Negotiation;
 using Nancy.Serialization.JsonNet;
 using Nancy.TinyIoc;

@@ -9,10 +9,9 @@ using Newtonsoft.Json.Converters;
 
 namespace ViewModels
 {
-	[JsonConverter(typeof(StringEnumConverter))]
+
 	public enum TrackType
 	{
-		[EnumMember(Value = "audio")]
 		Audio = 1,
 		Video = 2,
 		Pdf = 3,

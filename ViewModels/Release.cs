@@ -21,7 +21,13 @@ namespace ViewModels
 		public string Version { get; set; }
 
 		[XmlElement("type")]
+		[JsonIgnore]
 		public string Type { get; set; }
+
+		[JsonProperty(PropertyName = "type")]
+		public string JsonType {
+			get { return Type.ToLower(); }
+		}
 
 		[XmlElement("barcode")]
 		public string Barcode { get; set; }

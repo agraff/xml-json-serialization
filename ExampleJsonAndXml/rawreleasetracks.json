@@ -1,0 +1,42 @@
+{
+  "tracks": [
+    {
+      "id": 9525,
+      "title": "No Surprises",
+      "version": "",
+      "artist": {
+        "id": 304,
+        "name": "Radiohead",
+        "appearsAs": "Radiohead"
+      },
+      "duration": 229,
+      "explicitContent": false,
+      "isrc": "GBAYE9700386",
+      "type": "audio",
+      "url": "http://www.7digital.com/artist/radiohead/release/no-surprises/?partner=1401&h=01",
+      "streamingAvailableAfter": "2003-03-01T00:00:00.0000000Z",
+      "previewAvailableAfter": "2003-03-01T00:00:00.0000000Z",
+      "discNumber": 1,
+      "trackNumber": 1,
+      "download": {
+        "packages": [
+          {
+            "id": 2,
+            "description": "standard",
+            "price": {
+              "currencyCode": "GBP",
+              "sevendigitalPrice": 0.99,
+              "recommendedRetailPrice": 0.99
+            },
+            "formats": [
+              {
+                "id": 17,
+                "description": "MP3 320"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

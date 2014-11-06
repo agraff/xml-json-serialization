@@ -1,0 +1,69 @@
+{
+  "track": {
+    "id": 12345,
+    "title": "I Love You",
+    "version": "",
+    "artist": {
+      "id": 437,
+      "name": "The Dandy Warhols",
+      "appearsAs": "The Dandy Warhols",
+      "url": "http://www.7digital.com/artist/the-dandy-warhols/?partner=1401"
+    },
+    "trackNumber": 5,
+    "duration": 252,
+    "explicitContent": false,
+    "isrc": "USCA29600191",
+    "type": "audio",
+    "release": {
+      "id": 1302,
+      "title": "...The Dandy Warhols Come Down",
+      "version": "",
+      "type": "Album",
+      "barcode": "00724349501058",
+      "artist": {
+        "id": 437,
+        "name": "The Dandy Warhols",
+        "appearsAs": "The Dandy Warhols",
+        "url": "http://www.7digital.com/artist/the-dandy-warhols/?partner=1401"
+      },
+      "url": "http://www.7digital.com/artist/the-dandy-warhols/release/the-dandy-warhols-come-down/?partner=1401",
+      "image": "http://artwork-cdn.7static.com/static/img/sleeveart/00/000/013/0000001302_50.jpg",
+      "releaseDate": "1997-07-03T00:00:00.0000000Z"
+    },
+    "url": "http://www.7digital.com/artist/the-dandy-warhols/release/the-dandy-warhols-come-down/?partner=1401&h=05",
+    "price": {
+      "currency": {
+        "code": "GBP",
+        "symbol": "£"
+      },
+      "value": "0.99",
+      "formattedPrice": "£0.99",
+      "rrp": "0.99",
+      "formattedRrp": "£0.99",
+      "onSale": false
+    },
+    "streamingReleaseDate": "1997-07-03T00:00:00.0000000Z",
+    "discNumber": 1,
+    "number": 5,
+    "previewDate": "1997-07-03T00:00:00.0000000Z",
+    "download": {
+      "packages": [
+        {
+          "id": 2,
+          "description": "standard",
+          "price": {
+            "currencyCode": "GBP",
+            "sevendigitalPrice": 0.99,
+            "recommendedRetailPrice": 0.99
+          },
+          "formats": [
+            {
+              "id": 17,
+              "description": "MP3 320"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
